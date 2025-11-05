@@ -134,6 +134,8 @@
   --footer-link: #8a2be2;
   --footer-link-hover: #6a1b9a;
 
+  --audio-player-width: 90%;
+  --audio-cover-size: 220px;
 }
 
 /* ============================================
@@ -554,6 +556,17 @@ h3.ant-typography {
     margin: 15px auto;
     max-width: 100%;
   }
+  .msg-mkdn-container .audio-player {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+  .msg-mkdn-container .audio-player img {
+    width: 100%;
+    min-width: unset;
+    max-width: 350px;
+    height: auto;
+  }
   
   .msg-mkdn-container h1 {
     font-size: 1.8em;
@@ -698,4 +711,61 @@ h3.ant-typography {
 }
 
 
+
+
+
+.msg-mkdn-container .audio-player {
+  display: flex;
+  gap: 25px;
+  background: var(--bg-h4);
+  border-radius: var(--radius-lg);
+  padding: 25px;
+  margin: 30px 0;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  align-items: center;
+  width: 90%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.msg-mkdn-container .audio-player img {
+  width: 220px;
+  min-width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin: 0;
+}
+
+.msg-mkdn-container .player-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.msg-mkdn-container .track-info h4 {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 1.4em;
+  color: var(--color-primary);
+}
+
+.msg-mkdn-container .track-info p {
+  margin: 5px 0 0;
+  color: var(--color-text-muted);
+  font-size: 1em;
+}
+
+.msg-mkdn-container .audio-player audio {
+  width: 100%;
+  height: 50px;
+  border-radius: var(--radius-sm);
+}
 
