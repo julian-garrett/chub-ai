@@ -1,0 +1,63 @@
+:root {
+  /* Космос + магия = темный фэнтези с неоном */
+  --color-primary: #9d4edd;        /* Магический фиолет */
+  --color-secondary: #ffd60a;      /* Золото (gacha premium) */
+  --color-background: linear-gradient(135deg, #10002b 0%, #240046 100%);
+  
+  /* Текст */
+  --color-text-base: #f0e6ff;
+  --color-text-muted: #c8b6ff;
+  --color-text-accent: #ffd60a;
+  
+  /* Акценты */
+  --color-border: rgba(255, 214, 10, 0.3);
+  --color-hover: #ffea00;
+  
+  /* Фоны */
+  --bg-h1: linear-gradient(135deg, #5a189a 0%, #9d4edd 100%);
+  --bg-h4: rgba(157, 78, 221, 0.1);
+  --bg-h4-badge: rgba(255, 214, 10, 0.2);
+  --bg-quote: rgba(157, 78, 221, 0.15);
+  --bg-table-header: rgba(157, 78, 221, 0.25);
+  
+  /* Шрифты */
+  --font-primary: 'Crimson Pro', Georgia, serif;
+  --font-heading: 'Cinzel', serif;
+  
+  /* Эффекты */
+  --text-shadow-h1: 0 0 30px rgba(157, 78, 221, 0.8), 0 0 60px rgba(255, 214, 10, 0.3);
+  --text-shadow-strong: 0 0 8px rgba(255, 214, 10, 0.4);
+  
+  /* Тени с магическим свечением */
+  --shadow-md: 0 4px 20px rgba(157, 78, 221, 0.4), 0 0 40px rgba(157, 78, 221, 0.2);
+  --shadow-lg: 0 6px 30px rgba(255, 214, 10, 0.3);
+  
+  /* Tagline */
+  --tagline-bg: rgba(36, 0, 70, 0.95);
+  --tagline-color: #ffd60a;
+  --tagline-border: 2px solid #9d4edd;
+  
+  /* Ribbon (gacha style) */
+  --ribbon-bg: linear-gradient(135deg, #ffd60a 0%, #ff9e00 100%);
+  --ribbon-text: #240046;
+    
+  --footer-bg: rgba(102, 126, 234, .2);
+  --footer-border: 3px solid #667eea;
+  --footer-color: #a1b0c0;        /* Темнее для читаемости */
+  --footer-link: #667eea;
+  --footer-link-hover: #764ba2;   
+    
+}
+
+/* Магическое свечение границ */
+.msg-mkdn-container {
+  border: 2px solid #9d4edd;
+  box-shadow: 0 0 60px rgba(157, 78, 221, 0.3), inset 0 0 80px rgba(255, 214, 10, 0.05);
+}
+
+/* Золотые акценты для премиум элементов */
+.msg-mkdn-container h4 em {
+  background: linear-gradient(135deg, rgba(255, 214, 10, 0.2), rgba(255, 158, 0, 0.3));
+  border-color: #ffd60a;
+  color: #ffea00;
+}
