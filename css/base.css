@@ -621,7 +621,7 @@ h3.ant-typography {
   height: auto;
   object-fit: cover;
   margin: 0 var(--scenario-gap-right) var(--scenario-gap-bottom) 0;
-  border-radius: 50%;
+  border-radius: var(--scenario-card-radius);
   box-shadow: var(--shadow-sm);
   border: var(--scenario-card-border);
 }

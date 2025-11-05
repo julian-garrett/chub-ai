@@ -1,6 +1,19 @@
+.msg-mkdn-container img.scenario-card {
+  float: left;
+  width: var(--scenario-card-width);
+  max-width: var(--scenario-card-max-width);
+  min-width: var(--scenario-card-min-width);
+  height: auto;
+  object-fit: cover;
+  margin: 0 var(--scenario-gap-right) var(--scenario-gap-bottom) 0;
+  border-radius: var(--scenario-card-radius);
+  box-shadow: var(--shadow-sm);
+  border: var(--scenario-card-border);
+}
+
 :root {
   /* Космос + магия = темный фэнтези с неоном */
-  --color-primary: #9d4edd;        /* Магический фиолет */
+  --color-primary: #c2aed3;        /* Магический фиолет */
   --color-secondary: #ffd60a;      /* Золото (gacha premium) */
   --color-background: linear-gradient(135deg, #10002b 0%, #240046 100%);
   
@@ -41,11 +54,21 @@
   --ribbon-bg: linear-gradient(135deg, #ffd60a 0%, #ff9e00 100%);
   --ribbon-text: #240046;
     
-  --footer-bg: rgba(102, 126, 234, .2);
-  --footer-border: 3px solid #667eea;
-  --footer-color: #a1b0c0;        /* Темнее для читаемости */
-  --footer-link: #667eea;
+  --footer-bg: rgba(102, 126, 234, .9);
+  --footer-border: 3px solid #314499;
+  --footer-color: #c9d6e6;
+  --footer-link: #000411;
   --footer-link-hover: #764ba2;   
+    
+  --scenario-card-width: 25%;
+  --scenario-card-max-width: 150px;
+  --scenario-card-min-width: 100px;
+  --scenario-card-border: 3px solid var(--color-secondary);
+  --scenario-gap-right: 15px;
+  --scenario-gap-bottom: 10px;
+  --scenario-card-radius: 18px;
+    
+    
     
 }
 
