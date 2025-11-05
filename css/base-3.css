@@ -772,7 +772,8 @@ h3.ant-typography {
 .msg-mkdn-container .yt-player {
   max-width: 800px;
   margin: 30px auto;
-  background: #000;
+  background: var(--bg-h5);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
@@ -794,7 +795,7 @@ h3.ant-typography {
   display: block;
   margin: 0;
   border-radius: 0;
-  background: #181818;
+  background: var(--bg-h4);
 }
 
 .msg-mkdn-container .yt-player audio::-webkit-media-controls-panel {
