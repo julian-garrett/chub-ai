@@ -68,9 +68,7 @@
   --scenario-gap-bottom: 10px;
   --scenario-card-radius: 18px;
     
-  --yt-player-max-width: 800px;
-  --yt-player-bg: var(--bg-h5);
-  --yt-player-audio-bg: var(--bg-h4);    
+--yt-player-audio-bg: var(--bg-h4);    
 }
 
 /* Магическое свечение границ */

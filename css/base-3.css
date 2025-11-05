@@ -136,6 +136,10 @@
 
   --audio-player-width: 90%;
   --audio-cover-size: 220px;
+
+  --yt-player-max-width: 800px;
+  --yt-player-bg: var(--bg-h5);
+  --yt-player-audio-bg: var(--bg-h4);
 }
 
 /* ============================================
@@ -799,5 +803,5 @@ h3.ant-typography {
 }
 
 .msg-mkdn-container .yt-player audio::-webkit-media-controls-panel {
-  background: #181818;
+  background: var(--yt-player-audio-bg);
 }
