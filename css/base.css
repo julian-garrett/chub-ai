@@ -605,9 +605,7 @@ h3.ant-typography {
   width: var(--scenario-card-width);
   max-width: var(--scenario-card-max-width);
   min-width: var(--scenario-card-min-width);
-  height: var(--scenario-card-width);
-  max-height: var(--scenario-card-max-width);
-  min-height: var(--scenario-card-min-width);
+  height: auto;
   object-fit: cover;
   margin: 0 var(--scenario-gap-right) var(--scenario-gap-bottom) 0;
   border-radius: 50%;
