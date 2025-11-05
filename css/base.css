@@ -95,27 +95,6 @@
   --text-transform-h1: none;
   --letter-spacing-h1: 1px;
   --border-left-width: 0px;
-    
-    
-  /* Карточки - адаптивные размеры */
-  --char-card-width: 25%;
-  --char-card-max-width: 220px;
-  --char-card-min-width: 140px;
-  --card-gap-right: 20px;
-  --card-gap-bottom: 15px;    
-  
-  --scenario-card-width: 18%;
-  --scenario-card-max-width: 150px;
-  --scenario-card-min-width: 100px;
-  --scenario-gap-right: 20px;
-  --scenario-gap-bottom: 15px;    
-  
-  --location-card-width: 30%;
-  --location-card-max-width: 280px;
-  --location-card-min-width: 180px;
-  --location-gap-right: 20px;
-  --location-gap-bottom: 15px;     
-
 
   /* Карточки персонажей/сюжетов/локаций */
   --char-card-width: 25%;
@@ -590,8 +569,25 @@ h3.ant-typography {
     padding: var(--space-sm) 16px;
     font-size: 1em;
   }
+  
+  /* Адаптивность картинок */
+  .msg-mkdn-container img.img-right,
+  .msg-mkdn-container img.img-left,
+  .msg-mkdn-container img.char-card,
+  .msg-mkdn-container img.scenario-card,
+  .msg-mkdn-container img.location-card {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 0;
+    border-radius: var(--radius-md);
+  }
+  
+  .msg-mkdn-container img.scenario-card {
+    height: auto;
+    border-radius: var(--radius-md);
+  }
 }
-
 .msg-mkdn-container img.char-card {
   float: left;
   width: var(--char-card-width);
@@ -634,29 +630,26 @@ h3.ant-typography {
 
 
 
+/* Footer - использовать переменные */
 .msg-mkdn-container .footer-credits {
   margin-top: 20px;
   padding: 6px 12px;
-  background: rgba(138, 43, 226, 0.05);
-  border-left: 3px solid #8a2be2;
+  background: var(--footer-bg);
+  border-left: var(--footer-border);
   font-size: 0.8em;
-  color: #4a235a;
+  color: var(--footer-color);
   line-height: 1.4;
 }
 
-.msg-mkdn-container .footer-credits strong {
-  color: inherit;
-  text-shadow: none;
-}
-
 .msg-mkdn-container .footer-credits a {
-  color: #8a2be2;
+  color: var(--footer-link);
   border-bottom: none;
 }
 
 .msg-mkdn-container .footer-credits a:hover {
-  color: #6a1b9a;
+  color: var(--footer-link-hover);
 }
+
 
 
 
@@ -708,12 +701,3 @@ h3.ant-typography {
 
 
 
-@media(max-width: 768px) {
-  /* Когда ширина экрана меньше 768px (планшеты/телефоны) */
-  .msg-mkdn-container img.img-right,
-  .msg-mkdn-container img.img-left {
-    float: none;        /* Убирает обтекание */
-    width: 100%;        /* Картинка на всю ширину */
-    margin: 15px 0;     /* Отступы сверху/снизу */
-  }
-}
