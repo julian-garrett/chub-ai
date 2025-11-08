@@ -1,0 +1,679 @@
+/* ============================================
+   ЦВЕТОВАЯ ПАЛИТРА
+   ============================================ */
+:root {
+  /* Основные цвета */
+  --saloon-cream: #F5F5DC;
+  --poker-felt: #0F5132;
+  --whiskey-amber: #D2691E;
+  --leather-tan: #D2B48C;
+  --gunmetal: #2F4F4F;
+  --dust-brown: #A0522D;
+  --card-red: #DC143C;
+  --piano-black: #1C1C1C;
+  
+  /* Темные акценты для бордеров */
+  --dark-wood: #3E2723;
+  --deep-brown: #8B4513;
+  
+  /* Прозрачности */
+  --overlay-light: rgba(245, 245, 220, 0.9);
+  --overlay-medium: rgba(210, 180, 140, 0.85);
+  --shadow-soft: rgba(62, 39, 35, 0.25);
+  --shadow-medium: rgba(62, 39, 35, 0.4);
+}
+
+/* ============================================
+   ГЛОБАЛЬНЫЙ ФОН
+   ============================================ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://avatars.charhub.io/avatars/uploads/images/gallery/file/d86ad20c-1459-40e8-b141-da2e3847e9d5/c421e4f5-8444-4387-8f83-70d86e08dd17.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* ============================================
+   АВАТАР ПРОФИЛЯ
+   ============================================ */
+.ant-avatar.ant-avatar-square.ant-avatar-image {
+  width: 200px !important;
+  height: 200px !important;
+  border: 4px solid var(--dark-wood) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px var(--shadow-medium) !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  margin: 0 auto 25px auto !important;
+}
+
+.ant-avatar.ant-avatar-square.ant-avatar-image:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 20px var(--shadow-medium) !important;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .ant-avatar.ant-avatar-square.ant-avatar-image {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+/* ============================================
+   ОСНОВНОЙ КОНТЕЙНЕР ПРОФИЛЯ
+   ============================================ */
+.msg-mkdn-container.font-size-message {
+  background: var(--overlay-medium) !important;
+  border: 3px solid var(--dark-wood) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3px) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 25px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .msg-mkdn-container.font-size-message {
+    padding: 15px !important;
+  }
+}
+
+/* ============================================
+   ТИПОГРАФИКА - ЗАГОЛОВКИ
+   ============================================ */
+.msg-mkdn-container h1,
+.msg-mkdn-container.font-size-message h1 {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: bold !important;
+  letter-spacing: 2px !important;
+  font-size: 32px !important;
+  margin: 25px 0 !important;
+  text-align: center;
+  border-bottom: 3px solid var(--dark-wood);
+  padding-bottom: 15px;
+}
+
+.msg-mkdn-container h2,
+.msg-mkdn-container.font-size-message h2 {
+  color: var(--poker-felt) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  font-size: 24px !important;
+  margin: 20px 0 12px 0;
+  border-left: 5px solid var(--dark-wood);
+  padding-left: 20px;
+}
+
+.msg-mkdn-container h3,
+.msg-mkdn-container.font-size-message h3,
+.msg-mkdn-container h4,
+.msg-mkdn-container.font-size-message h4 {
+  color: var(--gunmetal) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  font-size: 20px !important;
+}
+
+/* H5 - акцентные блоки */
+h5 {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  border: 3px solid var(--card-red);
+  border-left: 8px solid var(--card-red);
+  padding: 15px 20px;
+  margin: 20px 0 12px 0;
+  background: var(--overlay-light);
+  border-radius: 10px;
+  font-size: 1.2em !important;
+  box-shadow: 0 3px 12px rgba(220, 20, 60, 0.2);
+  transition: all 0.3s ease;
+}
+
+h5:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(220, 20, 60, 0.3);
+}
+
+h5 em {
+  color: var(--gunmetal) !important;
+  opacity: 0.8 !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  margin-left: 10px !important;
+}
+
+/* H6 - второстепенные блоки */
+h6 {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  border: 2px solid var(--dust-brown);
+  border-left: 6px solid var(--dust-brown);
+  padding: 12px 16px;
+  margin: 15px 0 10px 0;
+  background: linear-gradient(135deg, rgba(160, 82, 45, 0.15), var(--saloon-cream));
+  border-radius: 8px;
+  font-size: 1.05em !important;
+  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.15);
+  transition: all 0.3s ease;
+}
+
+h6:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.25);
+}
+
+h6 em {
+  color: var(--gunmetal) !important;
+  opacity: 0.8 !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  margin-left: 10px !important;
+}
+
+/* Мобильная адаптация заголовков */
+@media (max-width: 768px) {
+  .msg-mkdn-container h1 {
+    font-size: 24px !important;
+  }
+  .msg-mkdn-container h2 {
+    font-size: 20px !important;
+  }
+  h5, h6 {
+    padding: 10px 15px;
+  }
+}
+
+/* ============================================
+   ТИПОГРАФИКА - ТЕКСТ И СПИСКИ
+   ============================================ */
+.msg-mkdn-container.font-size-message p,
+.msg-mkdn-container.font-size-message li,
+.msg-mkdn-container.font-size-message div {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  line-height: 1.6 !important;
+  font-size: 16px !important;
+}
+
+.msg-mkdn-container ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.msg-mkdn-container li {
+  position: relative;
+  padding-left: 30px !important;
+  margin-bottom: 10px !important;
+  list-style: none !important;
+}
+
+.msg-mkdn-container li::before {
+  content: "♪";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--whiskey-amber);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .msg-mkdn-container.font-size-message p,
+  .msg-mkdn-container.font-size-message li {
+    font-size: 14px !important;
+  }
+}
+
+/* ============================================
+   ССЫЛКИ
+   ============================================ */
+a {
+  color: var(--card-red) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--poker-felt) !important;
+  border-bottom: 1px solid var(--poker-felt);
+}
+
+h5 a {
+  color: var(--piano-black) !important;
+  text-decoration: none !important;
+  font-size: 1em !important;
+}
+
+h5 a:hover {
+  color: var(--card-red) !important;
+}
+
+h6 a {
+  color: var(--piano-black) !important;
+  font-size: 1em !important;
+}
+
+h6 a:hover {
+  color: var(--card-red) !important;
+}
+
+/* ============================================
+   КАРТОЧКИ БОТОВ
+   ============================================ */
+.ant-card {
+  background: var(--overlay-medium) !important;
+  border: 3px solid var(--dark-wood) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--card-red) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.ant-card .ant-card-head {
+  background: linear-gradient(90deg, rgba(62, 39, 35, 0.15) 0%, rgba(160, 82, 45, 0.08) 100%) !important;
+  border-bottom: 2px solid var(--dark-wood) !important;
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+.ant-card .ant-card-head-title {
+  color: var(--piano-black) !important;
+}
+
+.ant-card .ant-card-head-title * {
+  color: var(--piano-black) !important;
+}
+
+.ant-card .ant-card-meta-description {
+  color: var(--gunmetal) !important;
+}
+
+.ant-card .ant-card-meta-description * {
+  color: var(--gunmetal) !important;
+}
+
+.ant-card .ant-card-body {
+  color: var(--piano-black) !important;
+}
+
+.ant-card .ant-card-body * {
+  color: var(--piano-black) !important;
+}
+
+/* Изображения в карточках */
+.ant-row.ant-row-no-wrap.card-main-body img {
+  border: 2px solid var(--dark-wood) !important;
+  border-radius: 8px !important;
+}
+
+/* ============================================
+   ТЕГИ
+   ============================================ */
+.ant-tag {
+  background: linear-gradient(135deg, var(--saloon-cream) 0%, rgba(245, 245, 220, 0.95) 100%) !important;
+  border: 2px solid var(--dark-wood) !important;
+  color: var(--piano-black) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px var(--shadow-soft) !important;
+  transition: all 0.25s ease !important;
+  border-radius: 6px !important;
+  padding: 2px 8px !important;
+}
+
+.ant-tag:hover {
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.3) 0%, var(--saloon-cream) 100%) !important;
+  border-color: var(--whiskey-amber) !important;
+  box-shadow: 0 3px 10px rgba(210, 105, 30, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+.ant-tag * {
+  color: var(--piano-black) !important;
+}
+
+.ant-tag-error {
+  background: var(--card-red) !important;
+  color: var(--saloon-cream) !important;
+  border: 1px solid var(--card-red) !important;
+}
+
+.ant-tag-error * {
+  color: var(--saloon-cream) !important;
+}
+
+@media (max-width: 768px) {
+  .ant-tag {
+    font-size: 0.7rem !important;
+    padding: 1px 6px !important;
+  }
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+.ant-btn {
+  background: linear-gradient(135deg, var(--dust-brown) 0%, var(--dark-wood) 100%) !important;
+  border: 2px solid var(--dark-wood) !important;
+  color: var(--saloon-cream) !important;
+  font-weight: bold !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+.ant-btn:hover {
+  background: linear-gradient(135deg, var(--card-red) 0%, var(--dust-brown) 100%) !important;
+  color: var(--saloon-cream) !important;
+  transform: scale(1.03) !important;
+  box-shadow: 0 3px 12px rgba(220, 20, 60, 0.25) !important;
+}
+
+/* ============================================
+   ХЕДЕР (ВЕРХНЕЕ МЕНЮ)
+   ============================================ */
+.ant-menu-horizontal {
+  background: linear-gradient(90deg, rgba(62, 39, 35, 0.95) 0%, rgba(47, 79, 79, 0.9) 100%) !important;
+  border-bottom: 2px solid var(--dark-wood) !important;
+}
+
+.ant-menu-item,
+.ant-menu-submenu {
+  color: var(--saloon-cream) !important;
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu:hover {
+  color: var(--whiskey-amber) !important;
+}
+
+@media (max-width: 768px) {
+  .ant-menu-horizontal {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ============================================
+   СКРОЛЛБАР
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gunmetal);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dust-brown), var(--gunmetal));
+  border-radius: 6px;
+  border: 2px solid var(--gunmetal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--whiskey-amber), var(--dust-brown));
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* ============================================
+   VINYL PLAYER
+   ============================================ */
+.vinyl-player {
+  background: linear-gradient(135deg, var(--leather-tan) 0%, var(--saloon-cream) 100%);
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid var(--dark-wood);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin: 20px 0;
+}
+
+.player-header {
+  color: var(--piano-black);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--dark-wood);
+  padding-bottom: 8px;
+}
+
+.record-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vinyl-player audio {
+  height: 35px;
+  width: 100%;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.vinyl-player audio::-webkit-media-controls-panel {
+  background: var(--leather-tan);
+  border-radius: 6px;
+  border: 1px solid var(--dark-wood);
+}
+
+.vinyl-player audio::-webkit-media-controls-play-button,
+.vinyl-player audio::-webkit-media-controls-current-time-display,
+.vinyl-player audio::-webkit-media-controls-time-remaining-display,
+.vinyl-player audio::-webkit-media-controls-mute-button,
+.vinyl-player audio::-webkit-media-controls-volume-slider {
+  color: var(--piano-black);
+  filter: brightness(0);
+}
+
+.vinyl-player audio:hover {
+  transform: scale(1.01);
+}
+
+.vinyl-player audio:hover::-webkit-media-controls-panel {
+  border-color: var(--card-red);
+  box-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
+}
+
+@media (max-width: 768px) {
+  .vinyl-player {
+    padding: 10px;
+  }
+  .player-header {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ
+   ============================================ */
+.fake-ribbon {
+  background: var(--leather-tan) !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+}
+
+.fake-ribbon * {
+  color: var(--piano-black) !important;
+}
+
+.fake-ribbon svg {
+  fill: var(--card-red) !important;
+}
+
+.quote-color {
+  color: var(--gunmetal) !important;
+}
+
+.stats {
+  color: var(--piano-black) !important;
+}
+
+.mr-4 {
+  color: var(--piano-black) !important;
+  font-weight: 500 !important;
+}
+
+/* ============================================
+   КНОПКИ - ДОПОЛНЕНИЕ
+   ============================================ */
+
+/* Текстовые кнопки (timestamps, меню) */
+.ant-btn-text {
+  background: rgba(62, 39, 35, 0.08) !important;
+  border: 1px solid rgba(62, 39, 35, 0.2) !important;
+  color: var(--dark-wood) !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+  border-radius: 6px !important;
+  padding: 4px 8px !important;
+}
+
+.ant-btn-text:hover {
+  background: rgba(62, 39, 35, 0.15) !important;
+  border-color: var(--dark-wood) !important;
+  color: var(--piano-black) !important;
+}
+
+/* Кнопка с тремя точками */
+.ant-btn-text svg {
+  fill: var(--dark-wood) !important;
+}
+
+.ant-btn-text:hover svg {
+  fill: var(--piano-black) !important;
+}
+
+/* Маленькие кнопки (timestamps) */
+.ant-btn-sm.ant-btn-text {
+  font-size: 0.85rem !important;
+}
+/* H5 - акцентные блоки (КОМПАКТНАЯ ВЕРСИЯ) */
+h5 {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  border: 2px solid var(--card-red);
+  border-left: 5px solid var(--card-red);
+  padding: 10px 15px;
+  margin: 12px 0 8px 0;
+  background: var(--overlay-light);
+  border-radius: 8px;
+  font-size: 0.8em !important;
+  box-shadow: 0 2px 8px rgba(220, 20, 60, 0.15);
+  transition: all 0.3s ease;
+  line-height: 1.4 !important;
+}
+
+h5:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
+}
+
+h5 strong {
+  font-weight: 700 !important;
+  font-size: 0.9em !important;
+}
+
+h5 em {
+  color: var(--gunmetal) !important;
+  opacity: 0.85 !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  margin-left: 8px !important;
+  font-size: 0.7em !important;
+  display: block !important;
+  margin-top: 4px !important;
+}
+
+@media (max-width: 768px) {
+  h5 {
+    padding: 8px 12px;
+    font-size: 0.8em !important;
+  }
+}
+/* H6 - второстепенные блоки (МАКСИМАЛЬНО КОМПАКТНО) */
+h6 {
+  color: var(--piano-black) !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  border: 1px solid var(--dust-brown);
+  border-left: 4px solid var(--dust-brown);
+  padding: 6px 10px;
+  margin: 8px 0 6px 0;
+  background: linear-gradient(135deg, rgba(160, 82, 45, 0.1), rgba(245, 245, 220, 0.6));
+  border-radius: 6px;
+  font-size: 0.75em !important;
+  box-shadow: 0 1px 4px rgba(160, 82, 45, 0.12);
+  transition: all 0.25s ease;
+  line-height: 1.3 !important;
+}
+
+h6:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.2);
+}
+
+h6 strong {
+  font-weight: 600 !important;
+  font-size: 1em !important;
+}
+
+h6 em {
+  color: var(--gunmetal) !important;
+  opacity: 0.8 !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  margin-left: 6px !important;
+  font-size: 0.85em !important;
+}
+
+@media (max-width: 768px) {
+  h6 {
+    padding: 5px 8px;
+    font-size: 0.7em !important;
+  }
+}
