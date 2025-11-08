@@ -677,3 +677,23 @@ h6 em {
     font-size: 0.7em !important;
   }
 }
+/* Курсив и жирный текст - улучшенная читаемость */
+.msg-mkdn-container p em,
+.msg-mkdn-container em {
+  color: var(--dark-wood) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+
+.msg-mkdn-container p strong,
+.msg-mkdn-container strong {
+  color: var(--piano-black) !important;
+  font-weight: 700 !important;
+}
+
+.msg-mkdn-container p strong em,
+.msg-mkdn-container strong em {
+  color: var(--piano-black) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
