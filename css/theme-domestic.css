@@ -1,0 +1,177 @@
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai/css/base.css');
+/* DOMESTIC AFFAIR THEME - Quiet Tragedy */
+
+:root {
+  /* Цвета усталости и упадка */
+  --color-primary: #6b5b5b;           /* Выцветший коричневый - истощение */
+  --color-secondary: #8a7f7f;         /* Серо-розовый - потерянная теплота */
+  --color-background: linear-gradient(135deg, #e8e4dc 0%, #d4cfc7 100%);
+  
+  /* Текст */
+  --color-text-base: #3a3230;
+  --color-text-muted: #6b5b5b;
+  --color-text-accent: #8a7f7f;
+  
+  /* Акценты */
+  --color-border: rgba(107, 91, 91, 0.3);
+  --color-hover: #9d8f8f;
+  
+  /* Фоны элементов - приглушённые, выцветшие */
+  --bg-h1: linear-gradient(135deg, #6b5b5b 0%, #8a7f7f 100%);
+  --bg-h3: rgba(138, 127, 127, 0.15);
+  --bg-h4: rgba(107, 91, 91, 0.1);
+  --bg-h4-badge: rgba(138, 127, 127, 0.2);
+  --bg-h5: rgba(107, 91, 91, 0.08);
+  --bg-h6: rgba(138, 127, 127, 0.12);
+  --bg-code: #f5f2ed;
+  --bg-quote: rgba(138, 127, 127, 0.12);
+  --bg-table: #f5f2ed;
+  --bg-table-header: rgba(138, 127, 127, 0.2);
+  
+  /* Шрифты */
+  --font-primary: 'Crimson Text', Georgia, serif;
+  --font-heading: 'Cinzel', serif;
+  
+  /* Эффекты - минимальные, усталые */
+  --text-shadow-h1: 0 2px 4px rgba(58, 50, 48, 0.3);
+  --text-shadow-h2: none;
+  --text-shadow-h3: none;
+  --text-shadow-strong: none;
+  
+  /* Тени - мягкие, депрессивные */
+  --shadow-sm: 0 2px 8px rgba(107, 91, 91, 0.15);
+  --shadow-md: 0 4px 12px rgba(107, 91, 91, 0.2);
+  --shadow-lg: 0 6px 16px rgba(107, 91, 91, 0.25);
+  --shadow-xl: 0 8px 20px rgba(107, 91, 91, 0.3);
+  
+  /* Границы */
+  --border-width: 1px;
+  --hr-gradient: linear-gradient(90deg, transparent 0%, rgba(107, 91, 91, 0.4) 50%, transparent 100%);
+  
+  /* Изображения */
+  --img-border: 2px solid rgba(107, 91, 91, 0.3);
+  
+  /* Tagline */
+  --tagline-align: right;
+  --tagline-bg: rgba(232, 228, 220, 0.95);
+  --tagline-color: #6b5b5b;
+  --tagline-border: 2px solid #8a7f7f;
+  --tagline-padding: 0px 18px;
+  --tagline-font-size: 1.5em;
+  --tagline-max-width: 65%;
+  --tagline-margin: 0 0 0px auto;
+  
+  /* Ribbon - приглушённый */
+  --ribbon-bg: linear-gradient(135deg, #8a7f7f 0%, #9d8f8f 100%);
+  --ribbon-text: #f5f2ed;
+  
+  /* Footer */
+  --footer-bg: rgba(107, 91, 91, 0.1);
+  --footer-border: 2px solid #8a7f7f;
+  --footer-color: #6b5b5b;
+  --footer-link: #8a7f7f;
+  --footer-link-hover: #9d8f8f;
+  
+  /* Карточки сценариев */
+  --scenario-card-width: 22%;
+  --scenario-card-max-width: 150px;
+  --scenario-card-min-width: 100px;
+  --scenario-card-border: 2px solid #8a7f7f;
+  --scenario-gap-right: 15px;
+  --scenario-gap-bottom: 12px;
+  --scenario-card-radius: 8px;
+  
+  /* Карточки персонажей */
+  --char-card-width: 28%;
+  --char-card-max-width: 240px;
+  --char-card-min-width: 160px;
+  --char-card-shadow: 0 3px 10px rgba(107, 91, 91, 0.25);
+  --char-card-border: 2px solid rgba(107, 91, 91, 0.3);
+  
+  /* Опциональные эффекты */
+  --text-transform-h1: none;
+  --letter-spacing-h1: 0.5px;
+  --border-left-width: 0px;
+}
+
+/* Усталый контейнер */
+.msg-mkdn-container {
+  border: 1px solid #8a7f7f;
+  box-shadow: 
+    0 4px 15px rgba(107, 91, 91, 0.2),
+    inset 0 0 40px rgba(232, 228, 220, 0.3);
+}
+
+/* Выцветшие заголовки */
+.msg-mkdn-container h1 {
+  color: #f5f2ed !important;
+  border: none;
+}
+
+.msg-mkdn-container h2 {
+  color: #6b5b5b !important;
+  border-bottom: 2px solid #8a7f7f;
+}
+
+.msg-mkdn-container h3 {
+  color: #6b5b5b !important;
+  border-left: 4px solid #8a7f7f;
+}
+
+/* Приглушённые цитаты */
+.msg-mkdn-container blockquote {
+  border-left: 3px solid #8a7f7f;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Усталые карточки */
+.msg-mkdn-container img.scenario-card {
+  filter: grayscale(20%) brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 91, 91, 0.3);
+}
+
+/* Выцветший код */
+.msg-mkdn-container code {
+  background: #f5f2ed;
+  border: 1px solid rgba(107, 91, 91, 0.25);
+  color: #6b5b5b;
+}
+
+/* Приглушённый скроллбар */
+::-webkit-scrollbar-thumb {
+  background: #8a7f7f;
+  border: 2px solid #e8e4dc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9d8f8f;
+}
+
+/* Усталые ссылки */
+.msg-mkdn-container a {
+  color: #8a7f7f;
+  border-bottom: 1px dotted #8a7f7f;
+}
+
+.msg-mkdn-container a:hover {
+  color: #9d8f8f;
+  border-bottom-color: #9d8f8f;
+}
+
+/* Приглушённые таблицы */
+.msg-mkdn-container th {
+  background: rgba(138, 127, 127, 0.2);
+  color: #6b5b5b !important;
+  font-weight: 500;
+}
+
+.msg-mkdn-container td {
+  color: #6b5b5b;
+}
