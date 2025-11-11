@@ -1,0 +1,260 @@
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai@f4d811d/css/base-3.css');
+/* THEME: GREEN OASIS STATION - Stella & Nyxie Hayes Edition */
+
+:root {
+  /* Космическая станция + гидропоника */
+  --color-primary: #4a9d9c;           /* Циановый металл станции */
+  --color-secondary: #e8a87c;         /* Теплый медный (волосы сестер) */
+  --color-background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+  
+  /* Текст */
+  --color-text-base: #e2e8f0;
+  --color-text-muted: #a0aec0;
+  --color-text-accent: #f6ad55;
+  
+  /* Акценты */
+  --color-border: rgba(232, 168, 124, 0.4);
+  --color-hover: #63b3ed;
+  
+  /* Фоны элементов */
+  --bg-h1: linear-gradient(135deg, #2c5282 0%, #2d3748 100%);
+  --bg-h3: rgba(74, 157, 156, 0.15);
+  --bg-h4: rgba(232, 168, 124, 0.12);
+  --bg-h4-badge: rgba(99, 179, 237, 0.25);
+  --bg-h5: rgba(45, 55, 72, 0.6);
+  --bg-h6: rgba(74, 157, 156, 0.1);
+  --bg-code: #1a202c;
+  --bg-quote: rgba(232, 168, 124, 0.08);
+  --bg-table: #1a202c;
+  --bg-table-header: rgba(74, 157, 156, 0.3);
+  
+  /* Шрифты */
+  --font-primary: 'Crimson Text', Georgia, serif;
+  --font-heading: 'Cinzel', serif;
+  --font-mono: 'Courier New', monospace;
+  
+  /* Эффекты */
+  --text-shadow-h1: 0 0 20px rgba(99, 179, 237, 0.5), 0 2px 8px rgba(0, 0, 0, 0.8);
+  --text-shadow-h2: 0 1px 4px rgba(0, 0, 0, 0.6);
+  --text-shadow-h3: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --text-shadow-strong: 0 0 6px rgba(232, 168, 124, 0.4);
+  
+  /* Тени с космическим свечением */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 18px rgba(44, 82, 130, 0.5), 0 0 25px rgba(74, 157, 156, 0.15);
+  --shadow-lg: 0 6px 25px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 8px 35px rgba(44, 82, 130, 0.7);
+  
+  /* Границы */
+  --border-width: 2px;
+  --hr-gradient: linear-gradient(90deg, transparent 0%, rgba(74, 157, 156, 0.6) 50%, transparent 100%);
+  
+  /* Изображения */
+  --img-border: 2px solid rgba(74, 157, 156, 0.5);
+  
+  /* Tagline */
+  --tagline-align: right;
+  --tagline-bg: rgba(26, 32, 44, 0.95);
+  --tagline-color: #e8a87c;
+  --tagline-border: 2px solid #4a9d9c;
+  --tagline-padding: 0px 18px;
+  --tagline-font-size: 1.6em;
+  --tagline-max-width: 60%;
+  --tagline-margin: 0 0 0px auto;
+  
+  /* Ribbon */
+  --ribbon-bg: linear-gradient(135deg, #e8a87c 0%, #f6ad55 100%);
+  --ribbon-text: #1a202c;
+  
+  /* Footer */
+  --footer-bg: rgba(44, 82, 130, 0.6);
+  --footer-border: 3px solid #2c5282;
+  --footer-color: #a0aec0;
+  --footer-link: #63b3ed;
+  --footer-link-hover: #90cdf4;
+  
+  /* Карточки сценариев */
+  --scenario-card-width: 20%;
+  --scenario-card-max-width: 150px;
+  --scenario-card-min-width: 100px;
+  --scenario-card-border: 3px solid #4a9d9c;
+  --scenario-gap-right: 15px;
+  --scenario-gap-bottom: 10px;
+  --scenario-card-radius: 10px;
+  
+  /* Карточки персонажей */
+  --char-card-width: 25%;
+  --char-card-max-width: 220px;
+  --char-card-min-width: 140px;
+  --char-card-shadow: 0 4px 15px rgba(74, 157, 156, 0.4);
+  --char-card-border: 2px solid rgba(74, 157, 156, 0.5);
+  
+  /* Опциональные эффекты */
+  --text-transform-h1: none;
+  --letter-spacing-h1: 1.5px;
+  --border-left-width: 0px;
+}
+
+/* Свечение станционного металла */
+.msg-mkdn-container {
+  border: 2px solid #2c5282;
+  box-shadow: 
+    0 0 50px rgba(44, 82, 130, 0.4),
+    0 0 100px rgba(74, 157, 156, 0.1),
+    inset 0 0 80px rgba(26, 31, 46, 0.5);
+  position: relative;
+}
+
+/* Голографический эффект для h1 */
+.msg-mkdn-container h1 {
+  border: 2px solid #4a9d9c;
+  position: relative;
+  overflow: hidden;
+  color: #e2e8f0 !important;
+}
+
+.msg-mkdn-container h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 179, 237, 0.2), transparent);
+  animation: scanner 4s infinite;
+}
+
+@keyframes scanner {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Теплый акцент для h2 (гидропоника) */
+.msg-mkdn-container h2 {
+  color: #e8a87c !important;
+  border-bottom: 3px solid #4a9d9c;
+}
+
+/* Холодный металл для h3 */
+.msg-mkdn-container h3 {
+  color: #63b3ed !important;
+  border-left: 5px solid #e8a87c;
+}
+
+/* Ретро-терминальный эффект для цитат */
+.msg-mkdn-container blockquote {
+  border-left: 4px solid #4a9d9c;
+  background: rgba(74, 157, 156, 0.08);
+  position: relative;
+  font-family: var(--font-mono);
+}
+
+.msg-mkdn-container blockquote::before {
+  content: '>';
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 1.5em;
+  color: rgba(99, 179, 237, 0.5);
+}
+
+/* Станционное свечение для карточек */
+.msg-mkdn-container img.scenario-card {
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(74, 157, 156, 0.3);
+  transition: all 0.3s ease;
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(99, 179, 237, 0.5);
+  border-color: #63b3ed;
+}
+
+/* Терминальный код */
+.msg-mkdn-container code {
+  background: #1a202c;
+  border: 1px solid rgba(74, 157, 156, 0.4);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+  color: #90cdf4;
+}
+
+/* Космический скроллбар */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4a9d9c 0%, #2c5282 100%);
+  border: 2px solid #1a202c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #63b3ed 0%, #3182ce 100%);
+}
+
+/* Станционные таблицы */
+.msg-mkdn-container th {
+  background: rgba(74, 157, 156, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  color: #e2e8f0 !important;
+  border-bottom: 2px solid #4a9d9c;
+}
+
+/* Голографические ссылки */
+.msg-mkdn-container a {
+  color: #63b3ed;
+  text-shadow: 0 0 5px rgba(99, 179, 237, 0.3);
+}
+
+.msg-mkdn-container a:hover {
+  color: #90cdf4;
+  text-shadow: 0 0 10px rgba(99, 179, 237, 0.5);
+}
+
+/* Медный акцент для strong */
+.msg-mkdn-container strong {
+  color: #f6ad55;
+}
+
+/* Эффект мерцания для em (как огни станции) */
+.msg-mkdn-container em {
+  color: #e8a87c;
+  animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Footer - улучшенная читаемость для Green Oasis */
+.msg-mkdn-container .footer-credits {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: rgba(44, 82, 130, 0.25);
+  border-left: 4px solid #4a9d9c;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+  color: #cbd5e0;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.msg-mkdn-container .footer-credits strong {
+  color: #e8a87c;
+  font-weight: 600;
+}
+
+.msg-mkdn-container .footer-credits a {
+  color: #63b3ed;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.msg-mkdn-container .footer-credits a:hover {
+  color: #90cdf4;
+  border-bottom-color: #63b3ed;
+  text-shadow: 0 0 8px rgba(99, 179, 237, 0.4);
+}
