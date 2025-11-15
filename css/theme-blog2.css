@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Permanent+Marker&family=Caveat:wght@500;700&display=swap');
+/* THEME: DEVELOPER'S WORKBOOK - Breaking the 4th Wall */
+
+:root {
+  /* Тёплая рабочая палитра */
+  --color-primary: #4a3728;           
+  --color-secondary: #c17d3a;         
+  --color-background: #faf5ed;
+  
+  /* Текст */
+  --color-text-base: #2d2416;
+  --color-text-muted: #6b5d4f;
+  --color-text-accent: #8b6f47;
+  
+  /* Акценты */
+  --color-border: rgba(74, 55, 40, 0.2);
+  --color-hover: #d4915f;
+  
+  /* Маркерные выделения */
+  --highlight-yellow: rgba(255, 235, 59, 0.4);
+  --highlight-pink: rgba(244, 143, 177, 0.3);
+  --highlight-blue: rgba(100, 181, 246, 0.25);
+  --highlight-green: rgba(129, 199, 132, 0.3);
+  
+  /* Стикеры */
+  --sticky-yellow: #fff9c4;
+  --sticky-pink: #f8bbd0;
+  --sticky-blue: #bbdefb;
+  --sticky-green: #c5e1a5;
+  
+  /* Фоны элементов */
+  --bg-h1: linear-gradient(135deg, #6b5647 0%, #8b7663 100%);
+  --bg-h3: rgba(193, 125, 58, 0.08);
+  --bg-h4: rgba(139, 111, 71, 0.06);
+  --bg-h4-badge: rgba(193, 125, 58, 0.15);
+  --bg-h5: rgba(74, 55, 40, 0.04);
+  --bg-h6: rgba(193, 125, 58, 0.1);
+  --bg-code: #f5efe3;
+  --bg-quote: rgba(193, 125, 58, 0.06);
+  --bg-table: #f5efe3;
+  --bg-table-header: rgba(193, 125, 58, 0.15);
+  
+  /* Шрифты */
+  --font-primary: 'Crimson Text', Georgia, serif;
+  --font-heading: 'Crimson Text', Georgia, serif;
+  --font-handwriting: 'Caveat', cursive;
+  --font-marker: 'Permanent Marker', cursive;
+  --font-mono: 'Courier New', monospace;
+  
+  /* Эффекты */
+  --text-shadow-h1: 0 2px 3px rgba(45, 36, 22, 0.2);
+  --text-shadow-h2: none;
+  --text-shadow-h3: none;
+  --text-shadow-strong: none;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 5px rgba(74, 55, 40, 0.12);
+  --shadow-md: 0 3px 8px rgba(74, 55, 40, 0.15);
+  --shadow-lg: 0 4px 12px rgba(74, 55, 40, 0.2);
+  --shadow-xl: 0 6px 16px rgba(74, 55, 40, 0.25);
+  
+  /* Границы */
+  --border-width: 2px;
+  --border-color: var(--color-secondary);
+  --hr-height: 1px;
+  --hr-gradient: linear-gradient(90deg, transparent 0%, rgba(193, 125, 58, 0.4) 50%, transparent 100%);
+  
+  /* Изображения */
+  --img-border: 2px solid rgba(74, 55, 40, 0.25);
+  
+  /* Tagline */
+  --tagline-align: right;
+  --tagline-bg: var(--sticky-yellow);
+  --tagline-color: #4a3728;
+  --tagline-border: none;
+  --tagline-padding: 12px 18px;
+  --tagline-font-size: 1.3em;
+  --tagline-max-width: 65%;
+  --tagline-margin: 0 0 0px auto;
+  
+  /* Ribbon */
+  --ribbon-bg: linear-gradient(135deg, #c17d3a 0%, #d4915f 100%);
+  --ribbon-text: #faf5ed;
+  
+  /* Footer */
+  --footer-bg: rgba(193, 125, 58, 0.1);
+  --footer-border: 2px solid #c17d3a;
+  --footer-color: #4a3728;
+  --footer-link: #8b6f47;
+  --footer-link-hover: #c17d3a;
+  
+  /* Карточки */
+  --char-card-width: 28%;
+  --char-card-max-width: 240px;
+  --char-card-min-width: 160px;
+  --char-card-radius: 4px;
+  --char-card-shadow: 0 3px 10px rgba(74, 55, 40, 0.2);
+  --char-card-border: 2px solid rgba(193, 125, 58, 0.3);
+  --card-gap-right: 18px;
+  --card-gap-bottom: 14px;
+  
+  --scenario-card-width: 22%;
+  --scenario-card-max-width: 160px;
+  --scenario-card-min-width: 110px;
+  --scenario-card-border: 2px solid #c17d3a;
+  --scenario-gap-right: 14px;
+  --scenario-gap-bottom: 12px;
+  --scenario-card-radius: 4px;
+  
+  --location-card-width: 32%;
+  --location-card-max-width: 280px;
+  --location-card-min-width: 180px;
+  --location-gap-right: 18px;
+  --location-gap-bottom: 14px;
+  
+  /* Плавающие изображения */
+  --img-float-width: 38%;
+  --img-float-max-width: 360px;
+  --img-float-min-width: 220px;
+  --img-float-gap: 18px;
+  --img-center-width: 85%;
+  --img-center-max-width: 700px;
+  
+  /* Опциональные эффекты */
+  --text-transform-h1: none;
+  --letter-spacing-h1: 0.5px;
+  --border-left-width: 0px;
+  
+  /* Отступы */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 28px;
+  
+  /* Скругления */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-pill: 20px;
+  
+  /* Переходы */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+}
+
+/* Базовый контейнер */
+.msg-mkdn-container {
+  position: relative;
+  border: 2px solid rgba(193, 125, 58, 0.3) !important;
+  box-shadow: 
+    0 3px 12px rgba(74, 55, 40, 0.15),
+    inset 0 0 80px rgba(250, 245, 237, 0.5) !important;
+}
+
+/* Тонкая текстура бумаги */
+.msg-mkdn-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(193, 125, 58, 0.02) 1px,
+      rgba(193, 125, 58, 0.02) 2px
+    );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Заголовки */
+.msg-mkdn-container h1 {
+  color: #faf5ed !important;
+  border: none !important;
+  border-bottom: 3px solid rgba(193, 125, 58, 0.6) !important;
+  position: relative;
+}
+
+.msg-mkdn-container h2 {
+  color: #4a3728 !important;
+  border-bottom: 2px solid #c17d3a !important;
+  position: relative;
+  padding-bottom: 12px !important;
+}
+
+/* Рукописные акценты на h2 */
+.msg-mkdn-container h2::after {
+  content: '✎';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  font-family: var(--font-handwriting);
+  color: rgba(193, 125, 58, 0.4);
+  font-size: 1.5em;
+}
+
+.msg-mkdn-container h3 {
+  color: #4a3728 !important;
+  border-left: 4px solid #c17d3a !important;
+  font-family: var(--font-primary) !important;
+}
+
+.msg-mkdn-container h4 {
+  color: #2d2416 !important;
+  border-left: 3px solid rgba(193, 125, 58, 0.5) !important;
+}
+
+/* Strong - маркерное выделение */
+.msg-mkdn-container strong {
+  background: var(--highlight-yellow);
+  color: #2d2416;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 2px;
+  position: relative;
+}
+
+/* Em - подчеркивание */
+.msg-mkdn-container em {
+  color: #6b5d4f;
+  font-style: italic;
+  border-bottom: 2px solid rgba(193, 125, 58, 0.3);
+  padding-bottom: 1px;
+}
+
+/* Blockquote - ЗАМЕТКА НА ПОЛЯХ */
+.msg-mkdn-container blockquote {
+  background: var(--sticky-yellow) !important;
+  border: none !important;
+  border-left: 4px solid #f9a825 !important;
+  padding: 12px 16px !important;
+  margin: 16px 0 16px -30px !important;
+  box-shadow: 
+    2px 2px 6px rgba(74, 55, 40, 0.15),
+    0 0 0 1px rgba(249, 168, 37, 0.2) !important;
+  font-family: var(--font-handwriting) !important;
+  font-size: 1.05em !important;
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.msg-mkdn-container blockquote::before {
+  content: '📌';
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+/* Код - скетч/набросок */
+.msg-mkdn-container code {
+  background: #f5efe3 !important;
+  border: 2px dashed rgba(193, 125, 58, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 12px !important;
+  font-family: var(--font-mono) !important;
+  color: #2d2416 !important;
+  position: relative;
+}
+
+.msg-mkdn-container code::before {
+  content: '// sketch';
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 0.75em;
+  color: rgba(107, 93, 79, 0.5);
+  font-family: var(--font-handwriting);
+}
+
+/* Списки с рукописными маркерами */
+.msg-mkdn-container ul li::before {
+  content: '◆';
+  color: #c17d3a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.msg-mkdn-container ol li::before {
+  color: #c17d3a;
+  font-weight: 600;
+}
+
+/* Изображения - скрепки и скотч */
+.msg-mkdn-container img {
+  border: 2px solid rgba(74, 55, 40, 0.25) !important;
+  box-shadow: 
+    0 3px 10px rgba(74, 55, 40, 0.2),
+    inset 0 0 0 8px #faf5ed !important;
+  filter: brightness(98%) contrast(102%);
+  position: relative;
+  padding: 8px !important;
+  background: #faf5ed !important;
+}
+
+/* Эффект скрепки на изображениях */
+.msg-mkdn-container img::before {
+  content: '📎';
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  font-size: 1.5em;
+  z-index: 10;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+
+/* Карточки сценариев - стикеры */
+.msg-mkdn-container img.scenario-card {
+  background: var(--sticky-yellow) !important;
+  border: 2px solid rgba(249, 168, 37, 0.4) !important;
+  padding: 8px !important;
+  box-shadow: 
+    2px 3px 8px rgba(74, 55, 40, 0.2),
+    0 0 0 1px rgba(249, 168, 37, 0.15) !important;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 
+    3px 5px 12px rgba(74, 55, 40, 0.3),
+    0 0 0 1px rgba(249, 168, 37, 0.3) !important;
+}
+
+.msg-mkdn-container img.scenario-card::before {
+  content: '';
+}
+
+/* Таблицы */
+.msg-mkdn-container table {
+  border: 2px solid rgba(193, 125, 58, 0.25) !important;
+  background: #f5efe3 !important;
+}
+
+.msg-mkdn-container th {
+  background: rgba(193, 125, 58, 0.15) !important;
+  color: #4a3728 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9em;
+  border-bottom: 2px solid rgba(193, 125, 58, 0.3);
+}
+
+.msg-mkdn-container td {
+  border-bottom: 1px solid rgba(193, 125, 58, 0.1);
+}
+
+/* HR - рваная линия */
+.msg-mkdn-container hr {
+  border: none;
+  height: 0;
+  border-top: 2px dashed rgba(193, 125, 58, 0.3);
+  margin: var(--space-xl) 0;
+  position: relative;
+}
+
+.msg-mkdn-container hr::after {
+  content: '✂';
+  position: absolute;
+  right: 0;
+  top: -12px;
+  color: rgba(193, 125, 58, 0.4);
+  font-size: 1.2em;
+}
+
+/* Ссылки */
+.msg-mkdn-container a {
+  color: #8b6f47;
+  border-bottom: 1px solid rgba(193, 125, 58, 0.4);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.msg-mkdn-container a:hover {
+  color: #c17d3a;
+  border-bottom-color: #c17d3a;
+  background: rgba(255, 235, 59, 0.2);
+}
+
+/* Ant Design компоненты */
+h3.ant-typography {
+  background: linear-gradient(135deg, #6b5647 0%, #8b7663 100%) !important;
+  color: #faf5ed !important;
+  border: 2px solid rgba(193, 125, 58, 0.5) !important;
+  font-family: var(--font-heading) !important;
+  position: relative;
+}
+
+/* Рукописная заметка на ant-typography */
+h3.ant-typography::after {
+  content: '← working title';
+  position: absolute;
+  right: -140px;
+  top: 50%;
+  transform: translateY(-50%) rotate(2deg);
+  font-family: var(--font-handwriting);
+  font-size: 0.6em;
+  color: rgba(107, 93, 79, 0.6);
+  font-weight: 400;
+}
+
+.ant-ribbon-wrapper {
+  border: 2px solid rgba(193, 125, 58, 0.3) !important;
+  padding: 6px !important;
+  background: #faf5ed !important;
+  box-shadow: 0 3px 10px rgba(74, 55, 40, 0.2) !important;
+}
+
+.ant-ribbon {
+  background: linear-gradient(135deg, #c17d3a 0%, #d4915f 100%) !important;
+  border: none !important;
+}
+
+.ant-ribbon-text {
+  color: #faf5ed !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Tagline - жёлтый стикер */
+.mt-2 > .msg-mkdn-container {
+  background: var(--sticky-yellow) !important;
+  color: var(--tagline-color);
+  padding: var(--tagline-padding) !important;
+  text-align: var(--tagline-align);
+  border: none !important;
+  border-left: 4px solid #f9a825 !important;
+  border-radius: var(--radius-md);
+  font-size: var(--tagline-font-size) !important;
+  max-width: var(--tagline-max-width);
+  margin: var(--tagline-margin) !important;
+  font-family: var(--font-handwriting);
+  line-height: 1.4;
+  font-style: normal;
+  font-weight: 500;
+  box-shadow: 
+    2px 3px 8px rgba(74, 55, 40, 0.2),
+    0 0 0 1px rgba(249, 168, 37, 0.2) !important;
+  transform: rotate(1deg);
+}
+
+.mt-2 > .msg-mkdn-container::before {
+  content: '📌';
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  font-size: 1.5em;
+}
+
+.mt-2 > .msg-mkdn-container strong {
+  color: #4a3728;
+  font-weight: 700;
+  background: transparent;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c17d3a 0%, #8b6f47 100%);
+  border: 2px solid #faf5ed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d4915f 0%, #a67c52 100%);
+}
+
+::-webkit-scrollbar-track {
+  background: #f5efe3;
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ КЛАССЫ ДЛЯ АВТОРСКИХ ЗАМЕТОК */
+
+/* Стикер для важных мыслей */
+.dev-note {
+  background: var(--sticky-pink);
+  border-left: 4px solid #f06292;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-family: var(--font-handwriting);
+  font-size: 1.05em;
+  box-shadow: 2px 2px 6px rgba(74, 55, 40, 0.15);
+  transform: rotate(1deg);
+  position: relative;
+}
+
+.dev-note::before {
+  content: '💭';
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 1.3em;
+}
+
+/* Зачеркнутое - показать процесс */
+.crossed-out {
+  text-decoration: line-through;
+  color: rgba(107, 93, 79, 0.5);
+  position: relative;
+}
+
+/* Маркерное выделение */
+.highlight {
+  background: var(--highlight-yellow);
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* Скетч/набросок */
+.sketch {
+  border: 2px dashed rgba(193, 125, 58, 0.4);
+  padding: 16px;
+  margin: 16px 0;
+  background: rgba(245, 239, 227, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+/* ПАТЧ: Увеличение портретов персонажей в 2 раза */
+
+.msg-mkdn-container img[style*="float:left"] {
+  width: 240px !important;
+  height: auto !important;
+  min-width: 240px !important;
+}
+
+/* Альтернативный селектор для инлайн-стилей */
+.msg-mkdn-container p > img[style*="width:120px"] {
+  width: 240px !important;
+  height: auto !important;
+}
+
+/* Увеличение отступа справа от увеличенных портретов */
+.msg-mkdn-container img[style*="float:left"] {
+  margin: 0 30px 20px 0 !important;
+}
