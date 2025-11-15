@@ -523,3 +523,22 @@ h3.ant-typography::after {
   font-family: var(--font-mono);
   font-size: 0.95em;
 }
+
+/* ПАТЧ: Увеличение портретов персонажей в 2 раза */
+
+.msg-mkdn-container img[style*="float:left"] {
+  width: 240px !important;
+  height: auto !important;
+  min-width: 240px !important;
+}
+
+/* Альтернативный селектор для инлайн-стилей */
+.msg-mkdn-container p > img[style*="width:120px"] {
+  width: 240px !important;
+  height: auto !important;
+}
+
+/* Увеличение отступа справа от увеличенных портретов */
+.msg-mkdn-container img[style*="float:left"] {
+  margin: 0 30px 20px 0 !important;
+}
