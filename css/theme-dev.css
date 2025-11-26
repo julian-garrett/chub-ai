@@ -14,6 +14,8 @@
   --color-text-base: #1e1e1e;
   --color-text-muted: #6b6b6b;
   --color-text-accent: #ff6b6b;
+
+  --color-on-primary: #1114c1;
   
   /* Акценты */
   --color-border: rgba(0, 0, 0, 0.1);
