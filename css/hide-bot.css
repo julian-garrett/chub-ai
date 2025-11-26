@@ -1,0 +1,50 @@
+/* Скрываем все вкладки кроме Discussion */
+.ant-collapse-item:has(.ant-collapse-header-text:not(:has(span:first-child))) {
+    display: none;
+}
+
+/* Альтернативный вариант через nth-child, если первый не сработает */
+.ant-collapse-item:nth-child(1),
+.ant-collapse-item:nth-child(3),
+.ant-collapse-item:nth-child(4),
+.ant-collapse-item:nth-child(5),
+.ant-collapse-item:nth-child(6),
+.ant-collapse-item:nth-child(7),
+.ant-collapse-item:nth-child(8){
+    display: none;
+}
+/* Открываем Discussion автоматически */
+.ant-collapse-item:nth-child(2) .ant-collapse-header {
+    pointer-events: none;
+}
+
+.ant-collapse-item:nth-child(2) .ant-collapse-header[aria-expanded="false"] {
+    aria-expanded: true;
+}
+
+.ant-collapse-item:nth-child(2) .ant-collapse-content {
+    display: block !important;
+    height: auto !important;
+}
+
+.ant-collapse-item:nth-child(2) .ant-collapse-arrow {
+    transform: rotate(90deg);
+}
+
+
+
+/* Скрываем секцию "You May Also Like" полностью */
+h4.ant-typography.mt-8:has-text("You May Also Like"),
+h4.ant-typography.mt-8 + .sc-fmKFGs.hikinD.character-list-container {
+    display: none !important;
+}
+
+/* Еще один вариант - скрыть по ID контейнера */
+#chara-list {
+    display: none !important;
+}
+
+/* Скрываем весь левый блок с превью и кнопками */
+.ant-col.text-left.ant-col-xs-24.ant-col-lg-6:has(.ant-ribbon-wrapper) {
+    display: none !important;
+}
