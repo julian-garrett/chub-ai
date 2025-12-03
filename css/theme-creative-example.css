@@ -1,0 +1,116 @@
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai@main/css/base-improved.css');
+
+/* ============================================
+   ПРИМЕР КРЕАТИВНОЙ ТЕМЫ С ЭФФЕКТАМИ
+   
+   Показывает, как использовать переменные для эффектов
+   без написания большого количества CSS
+   ============================================ */
+
+:root {
+  /* ========== ЦВЕТА ========== */
+  --color-primary: #c97b7b;
+  --color-secondary: #d4a5a5;
+  --color-background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  
+  --color-text-base: #e8dfe0;
+  --color-text-muted: #b8a8aa;
+  --color-text-accent: #c97b7b;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #1a1a2e;
+  
+  --color-border: rgba(201, 123, 123, 0.5);
+  --color-hover: #e89b9b;
+  
+  /* ========== ФОНЫ ========== */
+  --bg-h1: linear-gradient(135deg, #3d2d3e 0%, #5a3c5a 100%);
+  --bg-h3: rgba(93, 73, 93, 0.4);
+  --bg-h4: rgba(201, 123, 123, 0.25);
+  --bg-h5: rgba(93, 73, 93, 0.3);
+  --bg-h6: rgba(201, 123, 123, 0.2);
+  --bg-code: #252540;
+  --bg-quote: rgba(93, 73, 93, 0.35);
+  --bg-table: #252540;
+  --bg-table-header: rgba(201, 123, 123, 0.4);
+  --bg-button: rgba(37, 37, 64, 0.8);
+  --bg-button-hover: var(--color-secondary);
+  
+  /* ========== ЭФФЕКТЫ - ВОТ ГДЕ КРЕАТИВНОСТЬ! ========== */
+  
+  /* Анимации */
+  --animation-h1: shimmer;              /* shimmer, scanner, pulse, glow */
+  --animation-h1-duration: 3s;
+  --animation-em: flicker;                /* flicker, pulse */
+  --animation-em-duration: 3s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: '';               /* Активирует анимацию shimmer */
+  --h1-before-position: absolute;
+  --h1-before-display: block;
+  
+  --quote-before-content: '"';           /* Кавычки для цитат */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение */
+  --glow-h1: 0 0 25px rgba(201, 123, 123, 0.6), 0 2px 6px rgba(0, 0, 0, 0.9);
+  --glow-strong: 0 0 8px rgba(201, 123, 123, 0.4);
+  --glow-link: 0 0 5px rgba(201, 123, 123, 0.3);
+  --glow-card: 0 0 20px rgba(201, 123, 123, 0.3);
+  
+  /* Множественные тени для карточек */
+  --card-shadow-extra: 0 3px 12px rgba(0, 0, 0, 0.6);
+  --card-hover-shadow-extra: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(201, 123, 123, 0.5);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-3px);
+  --card-transform: none;
+  
+  /* Градиенты скроллбара */
+  --scrollbar-gradient: linear-gradient(180deg, #c97b7b 0%, #5a3c5a 100%);
+  --scrollbar-hover-gradient: linear-gradient(180deg, #e89b9b 0%, #6a4c6a 100%);
+  
+  /* Эффекты контейнера */
+  --container-glow: 0 0 40px rgba(61, 45, 62, 0.5);
+  --container-inset-glow: inset 0 0 60px rgba(26, 26, 46, 0.4);
+  --container-border-glow: 0 0 80px rgba(201, 123, 123, 0.15);
+  
+  /* Текстовые эффекты */
+  --text-shadow-h1: 0 0 25px rgba(201, 123, 123, 0.6), 0 2px 6px rgba(0, 0, 0, 0.9);
+  --text-shadow-strong: 0 0 8px rgba(201, 123, 123, 0.4);
+  --text-transform-h1: uppercase;
+  --letter-spacing-h1: 2px;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 20px rgba(61, 45, 62, 0.6), 0 0 30px rgba(201, 123, 123, 0.2);
+  --shadow-lg: 0 6px 30px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 8px 40px rgba(61, 45, 62, 0.8);
+  
+  /* Tagline */
+  --tagline-bg: rgba(37, 37, 64, 0.95);
+  --tagline-color: #e8dfe0;
+  --tagline-border: 2px solid #c97b7b;
+}
+
+/* ========== МИНИМУМ КАСТОМНОГО CSS ========== */
+/* Только если нужно что-то специфичное, что нельзя сделать через переменные */
+
+.msg-mkdn-container {
+  border: 2px solid #5a3c5a;
+}
+
+/* Кастомный градиент для h1::before (если нужен другой цвет) */
+.msg-mkdn-container h1::before {
+  background: linear-gradient(90deg, transparent, rgba(201, 123, 123, 0.3), transparent);
+}
+
+/* Специфичная позиция для кавычек в цитатах */
+.msg-mkdn-container blockquote::before {
+  left: 10px;
+  top: -10px;
+  font-size: 3em;
+  color: rgba(201, 123, 123, 0.4);
+  font-family: Georgia, serif;
+}
+
