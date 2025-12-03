@@ -91,6 +91,14 @@
   --tagline-bg: rgba(37, 37, 64, 0.95);
   --tagline-color: #e8dfe0;
   --tagline-border: 2px solid #c97b7b;
+  
+  /* ========== ШРИФТ ЗАГОЛОВКА БОТА ========== */
+  /* Можно переопределить шрифт для h1 отдельно */
+  --font-h1: 'Cinzel', serif;              /* Или любой другой шрифт */
+  /* Примеры: */
+  /* --font-h1: 'Permanent Marker', cursive; */
+  /* --font-h1: 'Caveat', cursive; */
+  /* --font-h1: 'Segoe UI', sans-serif; */
 }
 
 /* ========== МИНИМУМ КАСТОМНОГО CSS ========== */

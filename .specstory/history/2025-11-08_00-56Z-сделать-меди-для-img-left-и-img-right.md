@@ -78,7 +78,7 @@ Output mode: content
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: e:\JSProjects\juls-chub-ai\css\base-chat.css</summary>
+<details><summary>Tool use: **search_replace** • Edit file: e:\JSProjects\juls-chub-ai\css\base-chat.css</summary>
 
 **Chunk 1**
 Lines added: 19, lines removed: 1
