@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=Share+Tech+Mono&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai/css/base-improved.css');
+
+/* ============================================
+   THEME: ZOMBIE APOCALYPSE - Зомби-апокалипсис
+   
+   Мрачная тема выживания в постапокалиптическом мире
+   Темные цвета, кроваво-красные акценты, атмосфера ужаса
+   Без градиентов - только сплошные цвета
+   ============================================ */
+
+:root {
+  /* ========== ЦВЕТА ЗОМБИ-АПОКАЛИПСИСА ========== */
+  --color-primary: #8b0000;              /* Темно-красный - цвет крови */
+  --color-secondary: #556b2f;           /* Грязно-зеленый - цвет разложения */
+  --color-background: #1a1a1a;          /* Темный фон - без градиентов */
+  
+  /* Текст */
+  --color-text-base: #e0e0e0;          /* Светло-серый - читаемый на темном */
+  --color-text-muted: #888888;         /* Приглушенный серый */
+  --color-text-accent: #cc0000;        /* Ярко-красный акцент */
+  --color-text-on-primary: #ffffff;    /* Белый на красном */
+  --color-text-on-secondary: #ffffff;  /* Белый на зеленом */
+  
+  /* Акценты */
+  --color-border: rgba(139, 0, 0, 0.5);
+  --color-hover: #cc0000;
+  
+  /* ========== ФОНЫ ЭЛЕМЕНТОВ ========== */
+  --bg-h1: #2d0000;                    /* Темно-красный фон - без градиентов */
+  --bg-h2: transparent;
+  --bg-h3: rgba(139, 0, 0, 0.3);
+  --bg-h4: rgba(85, 107, 47, 0.25);
+  --bg-h5: rgba(139, 0, 0, 0.2);
+  --bg-h6: rgba(85, 107, 47, 0.2);
+  --bg-code: #0d0d0d;
+  --bg-quote: rgba(139, 0, 0, 0.2);
+  --bg-table: #0d0d0d;
+  --bg-table-header: rgba(139, 0, 0, 0.4);
+  --bg-button: #2d0000;
+  --bg-button-hover: #4d0000;
+  
+  /* ========== ШРИФТЫ ========== */
+  --font-primary: 'Special Elite', 'Courier New', monospace;
+  --font-heading: 'Special Elite', 'Courier New', monospace;
+  --font-h1: 'Creepster', cursive;      /* Готический для ужаса */
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+  
+  /* ========== ЭФФЕКТЫ ========== */
+  
+  /* Анимации - пульсирующие, тревожные */
+  --animation-h1: none;
+  --animation-h1-duration: 2s;
+  --animation-em: none;
+  --animation-em-duration: 2s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: none;
+  --h1-before-position: absolute;
+  --h1-before-display: none;
+  
+  --quote-before-content: '☠';          /* Череп для цитат */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение - кроваво-красное, мрачное */
+  --glow-h1: 0 0 20px rgba(139, 0, 0, 0.8), 0 0 40px rgba(204, 0, 0, 0.4);
+  --glow-strong: 0 0 5px rgba(204, 0, 0, 0.5);
+  --glow-link: 0 0 8px rgba(139, 0, 0, 0.6);
+  --glow-card: 0 0 15px rgba(139, 0, 0, 0.5);
+  
+  /* Тени для карточек */
+  --card-shadow-extra: 0 3px 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(139, 0, 0, 0.3);
+  --card-hover-shadow-extra: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 30px rgba(204, 0, 0, 0.5);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-2px);
+  --card-transform: none;
+  
+  /* Скроллбар - сплошные цвета без градиентов */
+  --scrollbar-gradient: #8b0000;
+  --scrollbar-hover-gradient: #cc0000;
+  
+  /* Эффекты контейнера */
+  --container-glow: 0 0 30px rgba(139, 0, 0, 0.3);
+  --container-inset-glow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  --container-border-glow: 0 0 10px rgba(139, 0, 0, 0.5);
+  
+  /* Текстовые эффекты */
+  --text-shadow-h1: 0 0 10px rgba(139, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.9);
+  --text-shadow-h2: 0 0 5px rgba(139, 0, 0, 0.5);
+  --text-shadow-h3: 0 0 3px rgba(139, 0, 0, 0.4);
+  --text-shadow-strong: 0 0 5px rgba(204, 0, 0, 0.6);
+  --text-transform-h1: uppercase;
+  --letter-spacing-h1: 2px;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 8px 25px rgba(0, 0, 0, 0.9);
+  
+  /* Tagline */
+  --tagline-bg: rgba(13, 13, 13, 0.95);
+  --tagline-color: #cc0000;
+  --tagline-border: 2px solid #8b0000;
+  --tagline-font-size: 1.5em;
+  --tagline-max-width: 65%;
+  --tagline-align: right;
+  --tagline-margin: 0 0 0px auto;
+  --tagline-padding: 0px 18px;
+  
+  /* Footer */
+  --footer-bg: rgba(13, 13, 13, 0.8);
+  --footer-border: 2px solid #8b0000;
+  --footer-color: #888888;
+  --footer-link: #cc0000;
+  --footer-link-hover: #ff0000;
+}
+
+/* ========== КАСТОМНЫЕ ЭФФЕКТЫ ========== */
+
+/* Мрачные символы для цитат */
+.msg-mkdn-container blockquote::before {
+  left: 10px;
+  top: -10px;
+  font-size: 3em;
+  color: rgba(139, 0, 0, 0.6);
+  font-family: 'Creepster', cursive;
+}
+
+/* Кроваво-красное свечение для ссылок при наведении */
+.msg-mkdn-container a:hover {
+  color: #ff0000;
+  text-shadow: 0 0 10px rgba(204, 0, 0, 0.8);
+}
+
+/* Мрачные карточки сценариев */
+.msg-mkdn-container img.scenario-card {
+  border: 3px solid #8b0000;
+  transition: all 0.3s ease;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  border-color: #cc0000;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 30px rgba(204, 0, 0, 0.5);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Кроваво-красный акцент для strong */
+.msg-mkdn-container strong {
+  color: #cc0000;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(204, 0, 0, 0.6);
+}
+
+/* Мрачный курсив */
+.msg-mkdn-container em {
+  color: #556b2f;
+  font-style: italic;
+}
+
+/* Мрачные таблицы */
+.msg-mkdn-container th {
+  background: rgba(139, 0, 0, 0.4);
+  color: #e0e0e0;
+  font-weight: 700;
+  border-bottom: 2px solid #8b0000;
+}
+
+/* Мрачные границы для изображений */
+.msg-mkdn-container img {
+  border: 2px solid rgba(139, 0, 0, 0.6);
+  filter: brightness(0.85) contrast(1.1);
+}
+
+/* Мрачный скроллбар - без градиентов */
+::-webkit-scrollbar-thumb {
+  background: #8b0000;
+  border: 2px solid #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(13, 13, 13, 0.8);
+}
+
