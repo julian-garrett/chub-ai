@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai/css/base-improved.css');
+
+/* ============================================
+   THEME: SPACE OPERA PULP - Космическая опера с пальпом
+   
+   Ретрофутуристическая тема в стиле космической оперы
+   Яркие неоновые цвета, драматичные контрасты, атмосфера 50-60х о будущем
+   Вдохновлено Star Wars, Star Trek, Boris Vallejo
+   ============================================ */
+
+:root {
+  /* ========== ЦВЕТА КОСМИЧЕСКОЙ ОПЕРЫ ========== */
+  --color-primary: #00d4ff;              /* Неоновый циан - цвет энергии */
+  --color-secondary: #ff00ff;           /* Неоновый фуксия - цвет плазмы */
+  --color-background: #0a0e27;          /* Глубокий космический синий */
+  
+  /* Текст */
+  --color-text-base: #e0f2fe;          /* Светло-голубой - читаемый на темном */
+  --color-text-muted: #7dd3fc;         /* Приглушенный голубой */
+  --color-text-accent: #00d4ff;        /* Неоновый циан акцент */
+  --color-text-on-primary: #0a0e27;   /* Темный на циане */
+  --color-text-on-secondary: #ffffff;  /* Белый на фуксии */
+  
+  /* Акценты */
+  --color-border: rgba(0, 212, 255, 0.5);
+  --color-hover: #00ffff;
+  
+  /* ========== ФОНЫ ЭЛЕМЕНТОВ ========== */
+  --bg-h1: #001a33;                    /* Темно-синий фон с неоновым свечением */
+  --bg-h2: transparent;
+  --bg-h3: rgba(0, 212, 255, 0.15);
+  --bg-h4: rgba(255, 0, 255, 0.12);
+  --bg-h5: rgba(0, 212, 255, 0.1);
+  --bg-h6: rgba(255, 0, 255, 0.1);
+  --bg-code: #000814;
+  --bg-quote: rgba(0, 212, 255, 0.15);
+  --bg-table: #000814;
+  --bg-table-header: rgba(0, 212, 255, 0.3);
+  --bg-button: #001a33;
+  --bg-button-hover: #003366;
+  
+  /* ========== ШРИФТЫ ========== */
+  --font-primary: 'Rajdhani', 'Arial', sans-serif;
+  --font-heading: 'Rajdhani', 'Arial', sans-serif;
+  --font-h1: 'Orbitron', sans-serif;      /* Футуристический для заголовков */
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+  
+  /* ========== ЭФФЕКТЫ ========== */
+  
+  /* Анимации - пульсирующие, космические */
+  --animation-h1: none;
+  --animation-h1-duration: 2s;
+  --animation-em: none;
+  --animation-em-duration: 2s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: none;
+  --h1-before-position: absolute;
+  --h1-before-display: none;
+  
+  --quote-before-content: '◆';          /* Ромб для цитат - футуристический символ */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение - неоновое, яркое */
+  --glow-h1: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.5), 0 0 60px rgba(255, 0, 255, 0.3);
+  --glow-strong: 0 0 8px rgba(0, 212, 255, 0.6);
+  --glow-link: 0 0 10px rgba(0, 212, 255, 0.7);
+  --glow-card: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.2);
+  
+  /* Тени для карточек */
+  --card-shadow-extra: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 212, 255, 0.4);
+  --card-hover-shadow-extra: 0 8px 25px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 212, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.3);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-4px);
+  --card-transform: none;
+  
+  /* Скроллбар - неоновый */
+  --scrollbar-gradient: #00d4ff;
+  --scrollbar-hover-gradient: #00ffff;
+  
+  /* Эффекты контейнера */
+  --container-glow: 0 0 40px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  --container-inset-glow: inset 0 0 30px rgba(0, 212, 255, 0.1);
+  --container-border-glow: 0 0 15px rgba(0, 212, 255, 0.6);
+  
+  /* Текстовые эффекты */
+  --text-shadow-h1: 0 0 15px rgba(0, 212, 255, 0.9), 0 0 30px rgba(0, 212, 255, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.9);
+  --text-shadow-h2: 0 0 8px rgba(0, 212, 255, 0.6);
+  --text-shadow-h3: 0 0 5px rgba(0, 212, 255, 0.5);
+  --text-shadow-strong: 0 0 8px rgba(0, 212, 255, 0.7);
+  --text-transform-h1: uppercase;
+  --letter-spacing-h1: 3px;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 212, 255, 0.2);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 212, 255, 0.3);
+  --shadow-lg: 0 6px 25px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 212, 255, 0.4);
+  --shadow-xl: 0 8px 30px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 212, 255, 0.5);
+  
+  /* Tagline */
+  --tagline-bg: rgba(0, 8, 20, 0.95);
+  --tagline-color: #00d4ff;
+  --tagline-border: 2px solid #00d4ff;
+  --tagline-font-size: 1.5em;
+  --tagline-max-width: 65%;
+  --tagline-align: right;
+  --tagline-margin: 0 0 0px auto;
+  --tagline-padding: 0px 18px;
+  
+  /* Footer */
+  --footer-bg: rgba(0, 8, 20, 0.8);
+  --footer-border: 2px solid #00d4ff;
+  --footer-color: #7dd3fc;
+  --footer-link: #00d4ff;
+  --footer-link-hover: #00ffff;
+}
+
+/* ========== КАСТОМНЫЕ ЭФФЕКТЫ ========== */
+
+/* Футуристические символы для цитат */
+.msg-mkdn-container blockquote::before {
+  left: 10px;
+  top: -10px;
+  font-size: 3em;
+  color: rgba(0, 212, 255, 0.6);
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+/* Неоновое свечение для ссылок при наведении */
+.msg-mkdn-container a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.9);
+}
+
+/* Футуристические карточки сценариев */
+.msg-mkdn-container img.scenario-card {
+  border: 3px solid #00d4ff;
+  transition: all 0.3s ease;
+  filter: brightness(1.05) contrast(1.1);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  border-color: #00ffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 212, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.3);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+/* Неоновый акцент для strong */
+.msg-mkdn-container strong {
+  color: #00d4ff;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+}
+
+/* Футуристический курсив */
+.msg-mkdn-container em {
+  color: #ff00ff;
+  font-style: italic;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+}
+
+/* Футуристические таблицы */
+.msg-mkdn-container th {
+  background: rgba(0, 212, 255, 0.3);
+  color: #e0f2fe;
+  font-weight: 700;
+  border-bottom: 2px solid #00d4ff;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+/* Неоновые границы для изображений */
+.msg-mkdn-container img {
+  border: 2px solid rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Футуристический скроллбар */
+::-webkit-scrollbar-thumb {
+  background: #00d4ff;
+  border: 2px solid #0a0e27;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 8, 20, 0.8);
+}
+
+/* Дополнительные эффекты для космической атмосферы */
+.msg-mkdn-container h1 {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(255, 0, 255, 0.1) 100%);
+  border-left: 4px solid #00d4ff;
+  padding-left: 15px;
+}
+
+.msg-mkdn-container h2 {
+  border-bottom: 2px solid rgba(0, 212, 255, 0.4);
+  padding-bottom: 5px;
+}
+
+.msg-mkdn-container code {
+  background: rgba(0, 8, 20, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.msg-mkdn-container blockquote {
+  border-left: 4px solid #00d4ff;
+  background: rgba(0, 26, 51, 0.5);
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
