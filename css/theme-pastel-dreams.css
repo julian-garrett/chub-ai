@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Comfortaa:wght@400;600;700&family=Pacifico&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai@7d49226/css/base-improved.css');
+
+/* ============================================
+   THEME: PASTEL DREAMS - Нежные пастельные тона
+   
+   Мягкая, уютная тема с пастельными цветами
+   Вдохновлена kawaii-эстетикой, мягкими игрушками, утренним небом
+   Идеальна для романтических, милых, добрых персонажей
+   ============================================ */
+
+:root {
+  /* ========== ПАСТЕЛЬНАЯ ПАЛИТРА ========== */
+  --color-primary: #ff9ec7;              /* Нежно-розовый */
+  --color-secondary: #b4a7d6;            /* Лавандовый */
+  --color-background: #fff5f8;           /* Почти белый с розовым оттенком */
+  
+  /* Текст */
+  --color-text-base: #5a4a6a;           /* Мягкий фиолетовый */
+  --color-text-muted: #9d8db5;          /* Приглушенный лавандовый */
+  --color-text-accent: #ff9ec7;         /* Розовый акцент */
+  --color-text-on-primary: #ffffff;     /* Белый на розовом */
+  --color-text-on-secondary: #ffffff;   /* Белый на лавандовом */
+  
+  /* Акценты */
+  --color-border: rgba(180, 167, 214, 0.3);
+  --color-hover: #ffc4e1;
+  
+  /* ========== ФОНЫ ЭЛЕМЕНТОВ ========== */
+  --bg-h1: linear-gradient(135deg, #ff9ec7 0%, #ffc4e1 100%);
+  --bg-h2: transparent;
+  --bg-h3: rgba(255, 158, 199, 0.1);
+  --bg-h4: rgba(180, 167, 214, 0.12);
+  --bg-h5: rgba(255, 158, 199, 0.08);
+  --bg-h6: rgba(180, 167, 214, 0.1);
+  --bg-code: #fef7fb;
+  --bg-quote: rgba(180, 167, 214, 0.15);
+  --bg-table: #fef7fb;
+  --bg-table-header: rgba(255, 158, 199, 0.2);
+  --bg-button: #fff5f8;
+  --bg-button-hover: #ffc4e1;
+  
+  /* ========== ШРИФТЫ ========== */
+  --font-primary: 'Quicksand', 'Arial', sans-serif;
+  --font-heading: 'Comfortaa', 'Arial', sans-serif;
+  --font-h1: 'Pacifico', cursive;        /* Рукописный для заголовков */
+  --font-mono: 'Courier New', monospace;
+  
+  /* ========== ЭФФЕКТЫ ========== */
+  
+  /* Анимации */
+  --animation-h1: none;
+  --animation-h1-duration: 3s;
+  --animation-em: none;
+  --animation-em-duration: 2s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: none;
+  --h1-before-position: absolute;
+  --h1-before-display: none;
+  
+  --quote-before-content: '♡';          /* Сердечко для цитат */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение - мягкое, нежное */
+  --glow-h1: 0 0 20px rgba(255, 158, 199, 0.4);
+  --glow-strong: 0 0 8px rgba(255, 158, 199, 0.3);
+  --glow-link: none;
+  --glow-card: 0 0 15px rgba(180, 167, 214, 0.2);
+  
+  /* Тени для карточек */
+  --card-shadow-extra: 0 4px 15px rgba(180, 167, 214, 0.2);
+  --card-hover-shadow-extra: 0 8px 25px rgba(255, 158, 199, 0.3);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-3px) scale(1.02);
+  --card-transform: none;
+  
+  /* Скроллбар */
+  --scrollbar-gradient: linear-gradient(180deg, #ff9ec7 0%, #b4a7d6 100%);
+  --scrollbar-hover-gradient: linear-gradient(180deg, #ffc4e1 0%, #c9bfe6 100%);
+  
+  /* Эффекты контейнера */
+  --container-glow: 0 0 30px rgba(255, 158, 199, 0.15);
+  --container-inset-glow: inset 0 0 40px rgba(255, 245, 248, 0.5);
+  --container-border-glow: 0 0 10px rgba(180, 167, 214, 0.3);
+  
+  /* Текстовые эффекты */
+  --text-shadow-h1: 2px 2px 4px rgba(255, 158, 199, 0.3);
+  --text-shadow-h2: none;
+  --text-shadow-h3: none;
+  --text-shadow-strong: 0 0 5px rgba(255, 158, 199, 0.4);
+  --text-transform-h1: none;
+  --letter-spacing-h1: 1px;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 8px rgba(180, 167, 214, 0.15);
+  --shadow-md: 0 4px 12px rgba(180, 167, 214, 0.2);
+  --shadow-lg: 0 6px 20px rgba(180, 167, 214, 0.25);
+  --shadow-xl: 0 8px 25px rgba(180, 167, 214, 0.3);
+  
+  /* Tagline */
+  --tagline-bg: rgba(255, 245, 248, 0.9);
+  --tagline-color: #ff9ec7;
+  --tagline-border: 2px solid #b4a7d6;
+  --tagline-font-size: 1.5em;
+  --tagline-max-width: 65%;
+  --tagline-align: right;
+  --tagline-margin: 0 0 0px auto;
+  --tagline-padding: 0px 18px;
+  
+  /* Footer */
+  --footer-bg: rgba(254, 247, 251, 0.8);
+  --footer-border: 2px solid #b4a7d6;
+  --footer-color: #5a4a6a;
+  --footer-link: #ff9ec7;
+  --footer-link-hover: #ffc4e1;
+}
+
+/* ========== КАСТОМНЫЕ ЭФФЕКТЫ ========== */
+
+/* Сердечки для цитат */
+.msg-mkdn-container blockquote::before {
+  left: 10px;
+  top: -10px;
+  font-size: 2.5em;
+  color: rgba(255, 158, 199, 0.5);
+  font-family: 'Pacifico', cursive;
+}
+
+/* Мягкое свечение для ссылок при наведении */
+.msg-mkdn-container a:hover {
+  color: #ffc4e1;
+  text-shadow: 0 0 8px rgba(255, 196, 225, 0.5);
+}
+
+/* Пастельные карточки сценариев */
+.msg-mkdn-container img.scenario-card {
+  border: 3px solid #b4a7d6;
+  transition: all 0.3s ease;
+  filter: brightness(1.05) saturate(1.1);
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  border-color: #ff9ec7;
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* Нежный акцент для strong */
+.msg-mkdn-container strong {
+  color: #ff9ec7;
+  font-weight: 700;
+}
+
+/* Мягкий курсив */
+.msg-mkdn-container em {
+  color: #b4a7d6;
+  font-style: italic;
+}
+
+/* Пастельные таблицы */
+.msg-mkdn-container th {
+  background: rgba(255, 158, 199, 0.2);
+  color: #5a4a6a;
+  font-weight: 700;
+  border-bottom: 2px solid #b4a7d6;
+}
+
+/* Мягкие границы для изображений */
+.msg-mkdn-container img {
+  border: 2px solid rgba(180, 167, 214, 0.4);
+  box-shadow: 0 0 10px rgba(180, 167, 214, 0.2);
+}
+
+/* Градиентный скроллбар */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff9ec7 0%, #b4a7d6 100%);
+  border: 2px solid #fff5f8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffc4e1 0%, #c9bfe6 100%);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(254, 247, 251, 0.8);
+}
+
+/* Дополнительные эффекты для уютной атмосферы */
+.msg-mkdn-container h1 {
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 158, 199, 0.3);
+}
+
+.msg-mkdn-container h2 {
+  border-bottom: 2px solid rgba(180, 167, 214, 0.3);
+  padding-bottom: 8px;
+}
+
+.msg-mkdn-container code {
+  background: rgba(254, 247, 251, 0.8);
+  border: 1px solid rgba(180, 167, 214, 0.3);
+  color: #5a4a6a;
+}
+
+.msg-mkdn-container blockquote {
+  border-left: 4px solid #b4a7d6;
+  background: rgba(254, 247, 251, 0.5);
+}
+
+/* Мягкие кнопки */
+.ant-btn {
+  box-shadow: 0 2px 8px rgba(180, 167, 214, 0.2) !important;
+}
+
+.ant-btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 158, 199, 0.3) !important;
+}
