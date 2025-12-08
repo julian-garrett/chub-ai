@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Philosopher:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai@7d49226/css/base-improved.css');
+
+/* ============================================
+   THEME: ARTIST'S STUDIO — Студия художника
+   
+   Нежная романтическая тема для Claire
+   Мягкие натуральные тона, свет как в студии на рассвете
+   Пастельная палитра, тёплые акценты, атмосфера творчества
+   Вдохновлено: студии художников, утренний свет, акварель
+   ============================================ */
+
+:root {
+  /* ========== ЦВЕТА СТУДИИ ХУДОЖНИКА ========== */
+  --color-primary: #8b6f5c;              /* Тёплый серо-коричневый — дерево мольберта */
+  --color-secondary: #d4a5a5;           /* Пыльная роза — румянец на щеках */
+  --color-background: #faf7f2;          /* Кремовая бумага для эскизов */
+  
+  /* Текст */
+  --color-text-base: #3d3028;          /* Тёплый тёмно-коричневый — уголь для рисования */
+  --color-text-muted: #7a6b5d;         /* Приглушенный коричневый */
+  --color-text-accent: #a67c6d;        /* Терракотовый акцент */
+  --color-text-on-primary: #faf7f2;   /* Светлый на тёмном */
+  --color-text-on-secondary: #3d3028;  /* Тёмный на пастельном */
+  
+  /* Акценты */
+  --color-border: rgba(139, 111, 92, 0.25);
+  --color-hover: #c49a9a;
+  
+  /* ========== ФОНЫ ЭЛЕМЕНТОВ ========== */
+  --bg-h1: linear-gradient(135deg, #8b6f5c 0%, #a67c6d 100%);
+  --bg-h2: transparent;
+  --bg-h3: rgba(212, 165, 165, 0.15);
+  --bg-h4: rgba(139, 111, 92, 0.08);
+  --bg-h5: rgba(212, 165, 165, 0.1);
+  --bg-h6: rgba(139, 111, 92, 0.05);
+  --bg-code: #f5f0ea;
+  --bg-quote: rgba(212, 165, 165, 0.12);
+  --bg-table: #f5f0ea;
+  --bg-table-header: rgba(212, 165, 165, 0.25);
+  --bg-button: #faf7f2;
+  --bg-button-hover: #d4a5a5;
+  
+  /* ========== ШРИФТЫ ========== */
+  --font-primary: 'Crimson Pro', 'PT Serif', Georgia, serif;
+  --font-heading: 'Philosopher', 'Crimson Pro', serif;
+  --font-h1: 'Cormorant Garamond', Georgia, serif;      /* Изящный для имени */
+  --font-mono: 'Courier New', monospace;
+  
+  /* ========== ЭФФЕКТЫ ========== */
+  
+  /* Анимации — мягкие, ненавязчивые */
+  --animation-h1: none;
+  --animation-h1-duration: 3s;
+  --animation-em: none;
+  --animation-em-duration: 2s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: none;
+  --h1-before-position: absolute;
+  --h1-before-display: none;
+  
+  --quote-before-content: '"';          /* Классические кавычки для цитат */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение — очень мягкое, почти незаметное */
+  --glow-h1: 0 2px 12px rgba(139, 111, 92, 0.15);
+  --glow-strong: none;
+  --glow-link: none;
+  --glow-card: 0 4px 15px rgba(139, 111, 92, 0.12);
+  
+  /* Тени для карточек — мягкие, натуральные */
+  --card-shadow-extra: 0 2px 8px rgba(139, 111, 92, 0.08);
+  --card-hover-shadow-extra: 0 6px 20px rgba(139, 111, 92, 0.15);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-3px);
+  --card-transform: none;
+  
+  /* Скроллбар — натуральные тона */
+  --scrollbar-gradient: linear-gradient(180deg, #d4a5a5 0%, #a67c6d 100%);
+  --scrollbar-hover-gradient: linear-gradient(180deg, #c49a9a 0%, #8b6f5c 100%);
+  
+  /* Эффекты контейнера — мягкое свечение */
+  --container-glow: 0 4px 20px rgba(139, 111, 92, 0.08);
+  --container-inset-glow: none;
+  --container-border-glow: none;
+  
+  /* Текстовые эффекты — минимальные */
+  --text-shadow-h1: 0 1px 3px rgba(139, 111, 92, 0.2);
+  --text-shadow-h2: none;
+  --text-shadow-h3: none;
+  --text-shadow-strong: none;
+  --text-transform-h1: none;
+  --letter-spacing-h1: 1px;
+  
+  /* Тени — мягкие, натуральные */
+  --shadow-sm: 0 2px 8px rgba(139, 111, 92, 0.08);
+  --shadow-md: 0 4px 12px rgba(139, 111, 92, 0.12);
+  --shadow-lg: 0 6px 18px rgba(139, 111, 92, 0.15);
+  --shadow-xl: 0 8px 25px rgba(139, 111, 92, 0.18);
+  
+  /* Tagline */
+  --tagline-bg: rgba(250, 247, 242, 0.95);
+  --tagline-color: #8b6f5c;
+  --tagline-border: 2px solid #d4a5a5;
+  --tagline-font-size: 1.4em;
+  --tagline-max-width: 65%;
+  --tagline-align: right;
+  --tagline-margin: 0 0 0px auto;
+  --tagline-padding: 0px 18px;
+  
+  /* Footer */
+  --footer-bg: rgba(245, 240, 234, 0.6);
+  --footer-border: 2px solid #d4a5a5;
+  --footer-color: #7a6b5d;
+  --footer-link: #8b6f5c;
+  --footer-link-hover: #a67c6d;
+  
+  /* HR — мягкая линия */
+  --hr-height: 1px;
+  --hr-color: #d4a5a5;
+  --hr-opacity: 0.4;
+}
+
+/* ========== КАСТОМНЫЕ ЭФФЕКТЫ ========== */
+
+/* Мягкие кавычки для цитат */
+.msg-mkdn-container blockquote::before {
+  left: -5px;
+  top: -15px;
+  font-size: 4em;
+  color: rgba(212, 165, 165, 0.3);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+}
+
+/* Нежное подчёркивание для ссылок */
+.msg-mkdn-container a {
+  border-bottom: 1px dotted rgba(139, 111, 92, 0.4);
+  transition: all 0.3s ease;
+}
+
+.msg-mkdn-container a:hover {
+  color: #a67c6d;
+  border-bottom-color: #a67c6d;
+  border-bottom-style: solid;
+}
+
+/* Карточки с мягкими тенями */
+.msg-mkdn-container img.scenario-card {
+  border: 2px solid rgba(212, 165, 165, 0.4);
+  transition: all 0.3s ease;
+  filter: brightness(1.02) saturate(0.95);
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  border-color: #d4a5a5;
+  filter: brightness(1.05) saturate(1);
+}
+
+/* Нежный акцент для strong */
+.msg-mkdn-container strong {
+  color: #8b6f5c;
+  font-weight: 600;
+}
+
+/* Курсив с тёплым оттенком */
+.msg-mkdn-container em {
+  color: #a67c6d;
+  font-style: italic;
+}
+
+/* Таблицы в студийных тонах */
+.msg-mkdn-container th {
+  background: rgba(212, 165, 165, 0.25);
+  color: #3d3028;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(139, 111, 92, 0.3);
+}
+
+.msg-mkdn-container td {
+  border-bottom: 1px solid rgba(139, 111, 92, 0.15);
+}
+
+/* Изображения с мягкими рамками */
+.msg-mkdn-container img {
+  border: 1px solid rgba(139, 111, 92, 0.2);
+  box-shadow: 0 4px 12px rgba(139, 111, 92, 0.1);
+}
+
+/* Скроллбар в натуральных тонах */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-gradient);
+  border: 2px solid #faf7f2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover-gradient);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(245, 240, 234, 0.5);
+}
+
+/* Заголовок с градиентом */
+.msg-mkdn-container h1 {
+  background: var(--bg-h1);
+  position: relative;
+  overflow: visible;
+}
+
+/* Подзаголовки с деликатными акцентами */
+.msg-mkdn-container h2 {
+  border-bottom: 2px solid rgba(212, 165, 165, 0.3);
+  color: #8b6f5c;
+}
+
+.msg-mkdn-container h3 {
+  border-left: 4px solid #d4a5a5;
+}
+
+/* Код в студийных тонах */
+.msg-mkdn-container code {
+  background: #f5f0ea;
+  border: 1px solid rgba(139, 111, 92, 0.2);
+  color: #3d3028;
+}
+
+/* Цитаты с мягким фоном */
+.msg-mkdn-container blockquote {
+  border-left: 3px solid #d4a5a5;
+  background: rgba(212, 165, 165, 0.12);
+  position: relative;
+}
+
+/* Кнопки в студийном стиле */
+.ant-btn {
+  background: #faf7f2 !important;
+  border: 2px solid #d4a5a5 !important;
+  color: #8b6f5c !important;
+}
+
+.ant-btn:hover {
+  background: #d4a5a5 !important;
+  border-color: #8b6f5c !important;
+  color: #faf7f2 !important;
+}
+
+/* Заголовок бота (h3.ant-typography) */
+h3.ant-typography {
+  background: var(--bg-h1);
+  border: 2px solid rgba(212, 165, 165, 0.4);
+}
