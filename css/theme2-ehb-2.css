@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/julian-garrett/chub-ai@7d49226/css/base-improved.css');
+
+/* ============================================
+   THEME: EMOTION HUNTERS BLUES - Julia's True Colors
+   
+   Светлая база с дерзкими акцентами
+   Неоновый голубой + электрический фиолетовый
+   Вдохновлено: Vaporwave, lo-fi hip-hop, creative chaos
+   ============================================ */
+
+:root {
+  /* ========== ЦВЕТА ДЖУЛИИ (ДЕРЗКАЯ ВЕРСИЯ) ========== */
+  --color-primary: #00d9ff;              /* Неоновый циан - креативная энергия */
+  --color-secondary: #b24bf3;            /* Электрический фиолетовый - музыка */
+  --color-background: #f0f4f8;           /* Светло-серый с холодным подтоном */
+  
+  /* Текст */
+  --color-text-base: #1a202c;           /* Почти чёрный - контраст */
+  --color-text-muted: #4a5568;          /* Серый */
+  --color-text-accent: #00d9ff;         /* Неоновый циан */
+  --color-text-on-primary: #1a202c;     /* Тёмный на циане */
+  --color-text-on-secondary: #ffffff;   /* Белый на фиолетовом */
+  
+  /* Акценты */
+  --color-border: rgba(0, 217, 255, 0.4);
+  --color-hover: #00ffea;
+  
+  /* ========== ФОНЫ ЭЛЕМЕНТОВ ========== */
+  --bg-h1: linear-gradient(135deg, #00d9ff 0%, #b24bf3 100%);
+  --bg-h2: transparent;
+  --bg-h3: rgba(0, 217, 255, 0.12);
+  --bg-h4: rgba(178, 75, 243, 0.1);
+  --bg-h5: rgba(0, 217, 255, 0.08);
+  --bg-h6: rgba(178, 75, 243, 0.08);
+  --bg-code: #e2e8f0;
+  --bg-quote: rgba(0, 217, 255, 0.08);
+  --bg-table: #ffffff;
+  --bg-table-header: rgba(0, 217, 255, 0.2);
+  --bg-button: #ffffff;
+  --bg-button-hover: rgba(0, 217, 255, 0.15);
+  
+  /* ========== ШРИФТЫ ========== */
+  --font-primary: 'Outfit', 'Arial', sans-serif;
+  --font-heading: 'Space Grotesk', 'Arial', sans-serif;
+  --font-h1: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  /* ========== ЭФФЕКТЫ ========== */
+  
+  /* Анимации - энергичные */
+  --animation-h1: pulse;
+  --animation-h1-duration: 3s;
+  --animation-em: none;
+  --animation-em-duration: 2s;
+  
+  /* Псевдоэлементы */
+  --h1-before-content: '';
+  --h1-before-position: absolute;
+  --h1-before-display: block;
+  
+  --quote-before-content: '◆';          /* Ромб вместо ноты */
+  --quote-before-display: block;
+  --quote-before-position: absolute;
+  
+  /* Свечение - неоновое */
+  --glow-h1: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 60px rgba(178, 75, 243, 0.2);
+  --glow-strong: 0 0 8px rgba(0, 217, 255, 0.5);
+  --glow-link: 0 0 5px rgba(0, 217, 255, 0.6);
+  --glow-card: 0 0 20px rgba(0, 217, 255, 0.3);
+  
+  /* Тени для карточек */
+  --card-shadow-extra: 0 8px 25px rgba(0, 217, 255, 0.2);
+  --card-hover-shadow-extra: 0 12px 40px rgba(0, 217, 255, 0.35), 0 0 30px rgba(178, 75, 243, 0.2);
+  
+  /* Трансформации */
+  --card-hover-transform: translateY(-5px) scale(1.02);
+  --card-transform: none;
+  
+  /* Скроллбар - градиент */
+  --scrollbar-gradient: linear-gradient(180deg, #00d9ff 0%, #b24bf3 100%);
+  --scrollbar-hover-gradient: linear-gradient(180deg, #00ffea 0%, #c45fff 100%);
+  
+  /* Эффекты контейнера */
+  --container-glow: 0 8px 40px rgba(0, 217, 255, 0.15);
+  --container-inset-glow: inset 0 0 60px rgba(0, 217, 255, 0.05);
+  --container-border-glow: 0 0 20px rgba(0, 217, 255, 0.3);
+  
+  /* Текстовые эффекты */
+  --text-shadow-h1: 0 0 15px rgba(0, 217, 255, 0.5), 0 0 30px rgba(178, 75, 243, 0.3);
+  --text-shadow-h2: 0 0 8px rgba(0, 217, 255, 0.3);
+  --text-shadow-h3: none;
+  --text-shadow-strong: 0 0 8px rgba(0, 217, 255, 0.4);
+  --text-transform-h1: uppercase;
+  --letter-spacing-h1: 2px;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 10px rgba(0, 217, 255, 0.1);
+  --shadow-md: 0 4px 15px rgba(0, 217, 255, 0.15);
+  --shadow-lg: 0 6px 25px rgba(0, 217, 255, 0.2);
+  --shadow-xl: 0 8px 35px rgba(0, 217, 255, 0.25);
+  
+  /* Tagline */
+  --tagline-bg: rgba(255, 255, 255, 0.9);
+  --tagline-color: #00d9ff;
+  --tagline-border: 2px solid #b24bf3;
+  --tagline-font-size: 1.5em;
+  --tagline-max-width: 65%;
+  --tagline-align: right;
+  --tagline-margin: 0 0 0px auto;
+  --tagline-padding: 0px 18px;
+  
+  /* Footer */
+  --footer-bg: rgba(0, 217, 255, 0.08);
+  --footer-border: 2px solid #b24bf3;
+  --footer-color: #4a5568;
+  --footer-link: #00d9ff;
+  --footer-link-hover: #b24bf3;
+  
+  /* HR */
+  --hr-height: 2px;
+  --hr-color: linear-gradient(90deg, transparent 0%, #00d9ff 50%, transparent 100%);
+  --hr-opacity: 1;
+}
+
+/* ========== КАСТОМНЫЕ ЭФФЕКТЫ ========== */
+
+/* Контейнер с неоновым свечением */
+.msg-mkdn-container {
+  background: var(--color-background);
+  border: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+/* H1 с градиентом и анимацией */
+.msg-mkdn-container h1 {
+  background: var(--bg-h1);
+  border: none;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Анимация пульсации для h1 */
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 60px rgba(178, 75, 243, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.6), 0 0 80px rgba(178, 75, 243, 0.3);
+  }
+}
+
+/* Shimmer эффект для h1 */
+.msg-mkdn-container h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Ромб для цитат */
+.msg-mkdn-container blockquote::before {
+  left: -8px;
+  top: -15px;
+  font-size: 3.5em;
+  color: rgba(178, 75, 243, 0.4);
+  font-family: 'Space Grotesk', sans-serif;
+  text-shadow: 0 0 10px rgba(178, 75, 243, 0.5);
+}
+
+/* Карточки с неоновым эффектом */
+.msg-mkdn-container img.scenario-card {
+  border: 3px solid rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+  filter: brightness(1.05) saturate(1.1);
+}
+
+.msg-mkdn-container img.scenario-card:hover {
+  border-color: #00d9ff;
+  filter: brightness(1.1) saturate(1.2);
+  box-shadow: 0 12px 40px rgba(0, 217, 255, 0.35), 0 0 30px rgba(178, 75, 243, 0.2);
+}
+
+/* Неоновый акцент для strong */
+.msg-mkdn-container strong {
+  color: #00d9ff;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+}
+
+/* Фиолетовый курсив */
+.msg-mkdn-container em {
+  color: #b24bf3;
+  font-style: italic;
+  text-shadow: 0 0 5px rgba(178, 75, 243, 0.3);
+}
+
+/* Таблицы с градиентом */
+.msg-mkdn-container th {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(178, 75, 243, 0.15) 100%);
+  color: #1a202c;
+  font-weight: 700;
+  border-bottom: 2px solid #00d9ff;
+}
+
+.msg-mkdn-container td {
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+}
+
+/* Неоновые границы для изображений */
+.msg-mkdn-container img {
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.15);
+}
+
+/* Градиентный скроллбар */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-gradient);
+  border: 2px solid #f0f4f8;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover-gradient);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+/* H2 с неоновым подчёркиванием */
+.msg-mkdn-container h2 {
+  border-bottom: 3px solid rgba(0, 217, 255, 0.5);
+  padding-bottom: 8px;
+  text-shadow: 0 0 8px rgba(0, 217, 255, 0.3);
+}
+
+/* H3 с акцентом слева */
+.msg-mkdn-container h3 {
+  border-left: 5px solid #b24bf3;
+  padding-left: 15px;
+  box-shadow: 0 2px 10px rgba(0, 217, 255, 0.1);
+}
+
+/* Code blocks с контрастом */
+.msg-mkdn-container code {
+  background: #e2e8f0;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: #00d9ff;
+  text-shadow: 0 0 5px rgba(0, 217, 255, 0.3);
+}
+
+/* Blockquote с неоновой атмосферой */
+.msg-mkdn-container blockquote {
+  border-left: 4px solid #b24bf3;
+  background: rgba(0, 217, 255, 0.05);
+  box-shadow: inset 0 0 20px rgba(0, 217, 255, 0.05);
+}
+
+/* Кнопки с неоновым hover */
+.ant-btn {
+  border: 2px solid #b24bf3 !important;
+  color: #00d9ff !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-btn:hover {
+  background: rgba(0, 217, 255, 0.15) !important;
+  border-color: #00d9ff !important;
+  color: #1a202c !important;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3) !important;
+}
+
+/* H3.ant-typography (заголовок бота) */
+h3.ant-typography {
+  background: var(--bg-h1);
+  border: none;
+  animation: pulse 3s infinite;
+}
+
+/* Ссылки с неоновым эффектом */
+.msg-mkdn-container a:hover {
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.6);
+}
+
+/* HR с градиентом */
+.msg-mkdn-container hr {
+  background: linear-gradient(90deg, transparent 0%, #00d9ff 50%, transparent 100%);
+  height: 2px;
+}
