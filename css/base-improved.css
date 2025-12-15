@@ -863,3 +863,62 @@ h3.ant-typography::before {
   }
 }
 
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.msg-mkdn-container .footer-credits {
+  margin-top: var(--space-xl);
+  padding: 10px var(--space-md);
+  background: var(--bg-h5);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8em;
+  color: var(--color-text-muted);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.msg-mkdn-container .footer-credits .kofi {
+  padding: 5px 12px;
+  background: var(--bg-h4);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-pill);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.msg-mkdn-container .footer-credits .kofi:hover {
+  background: var(--color-secondary);
+  color: var(--color-text-on-secondary);
+}
+
+.msg-mkdn-container .footer-credits a:not(.kofi) {
+  color: var(--color-secondary);
+  border-bottom: none;
+}
+
+.msg-mkdn-container .footer-credits a:not(.kofi):hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   АУДИО ПЛЕЕР - КОМПАКТНЫЙ
+   ============================================ */
+.msg-mkdn-container audio {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-md);
+  margin: 0 0 var(--space-md) 0;
+  filter: sepia(20%) saturate(70%) brightness(95%);
+}
+
+.msg-mkdn-container audio::-webkit-media-controls-panel {
+  background: var(--bg-h4);
+}
