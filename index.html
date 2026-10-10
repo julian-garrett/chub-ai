@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Проверка связи</title>
+<style>
+:root{--bg:#fff;--fg:#111;--mut:#666;--ok:#0a7d32;--bad:#c62828;--warn:#b26a00;--line:#ddd}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--mut:#999;--ok:#4caf50;--bad:#ef5350;--warn:#ffb74d;--line:#333}}
+body{background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,sans-serif;margin:0;padding:16px;max-width:640px}
+h1{font-size:22px;margin:0 0 8px}
+p{margin:6px 0;color:var(--mut)}
+button{font-size:20px;padding:14px 24px;border-radius:10px;border:0;background:#1565c0;color:#fff;width:100%;margin:12px 0}
+button:disabled{background:#888}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child{text-align:right;white-space:nowrap}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--bad);font-weight:600}.warn{color:var(--warn);font-weight:600}
+#info{font-size:14px;color:var(--mut);margin:8px 0}
+#done{display:none;font-size:18px;margin:14px 0;font-weight:600}
+</style>
+</head>
+<body>
+<h1>Проверка связи</h1>
+<p>Нажмите кнопку и подождите 5–10 минут, не закрывая страницу. Когда появится надпись «Готово», сделайте скриншот всей таблицы и пришлите Денису.</p>
+<button id="go">Начать проверку</button>
+<div id="info"></div>
+<table id="t"></table>
+<div id="done">Готово! Сделайте скриншот и пришлите.</div>
+<script>
+const MB=1048576;
+const T=[
+ ['Cloudflare','https://speed.cloudflare.com/__down?bytes=25000000',25e6],
+ ['OVH (Франция)','https://proof.ovh.net/files/10Mb.dat',10*MB],
+ ['Scaleway (Париж)','https://scaleway.testdebit.info/10M.iso',10*MB],
+ ['Vultr (Франкфурт)','https://fra-de-ping.vultr.com/vultr.com.100MB.bin',100*MB],
+ ['Vultr (Варшава)','https://waw-pl-ping.vultr.com/vultr.com.100MB.bin',100*MB],
+ ['Vultr (Стокгольм)','https://sto-se-ping.vultr.com/vultr.com.100MB.bin',100*MB],
+ ['DataPacket (Франкфурт)','https://fra.download.datapacket.com/100mb.bin',100e6],
+ ['DataPacket (Варшава)','https://war.download.datapacket.com/100mb.bin',100e6],
+ ['DataPacket (Вена)','https://vie.download.datapacket.com/100mb.bin',100e6],
+ ['DataPacket (Хельсинки)','https://hel.download.datapacket.com/100mb.bin',100e6]
+];
+const LIMIT=45000;
+const $=s=>document.querySelector(s);
+const tbl=$('#t');
+const rows=T.map(([n])=>{const r=tbl.insertRow();r.insertCell().textContent=n;const c=r.insertCell();c.textContent='—';return c});
+function set(c,txt,cls){c.textContent=txt;c.className=cls||''}
+
+async function info(){
+ try{
+  const c=new AbortController();setTimeout(()=>c.abort(),6000);
+  const j=await (await fetch('https://ipwho.is/',{signal:c.signal})).json();
+  $('#info').textContent=[j.ip,j.connection&&j.connection.isp,j.city,j.country].filter(Boolean).join(' · ');
+ }catch(e){$('#info').textContent='Адрес определить не удалось'}
+}
+
+async function one(url,bytes,cell,cache){
+ const key=new Request(location.origin+'/__t'+Math.random());
+ const ctl=new AbortController();
+ const t0=performance.now();let t1=0;
+ const tick=setInterval(()=>set(cell,(t1?'качаю… ':'соединяюсь… ')+Math.round((performance.now()-t0)/1000)+' с','warn'),500);
+ const to=setTimeout(()=>ctl.abort(),LIMIT);
+ try{
+  const u=url;
+  const r=await fetch(u,{mode:'no-cors',cache:'no-store',referrerPolicy:'no-referrer',signal:ctl.signal});
+  t1=performance.now();
+  await cache.put(key,r);
+  const s=(performance.now()-t0)/1000;
+  const mbit=bytes*8/s/1e6;
+  set(cell,'OK · '+mbit.toFixed(1)+' Мбит/с','ok');
+  return 'OK '+mbit.toFixed(1)+'Mbit ttfb'+Math.round(t1-t0)+'ms';
+ }catch(e){
+  if(t1){set(cell,'ЗАВИС после начала','bad');return 'STALL ttfb'+Math.round(t1-t0)+'ms'}
+  set(cell,'нет соединения','bad');return 'FAIL '+(e.name||'')+' '+Math.round(performance.now()-t0)+'ms';
+ }finally{clearInterval(tick);clearTimeout(to);try{await cache.delete(key)}catch(e){}}
+}
+
+$('#go').onclick=async()=>{
+ const b=$('#go');b.disabled=true;b.textContent='Идёт проверка…';
+ info();
+ let cache;
+ try{cache=await caches.open('nettest')}catch(e){b.textContent='Браузер не поддерживает проверку';return}
+ const log=[];
+ for(let i=0;i<T.length;i++){log.push(T[i][0]+': '+await one(T[i][1],T[i][2],rows[i],cache))}
+ try{await caches.delete('nettest')}catch(e){}
+ b.textContent='Проверка закончена';
+ $('#done').style.display='block';
+ window.__log=log.join('\n');console.log(window.__log);
+};
+</script>
+</body>
+</html>
